@@ -1,0 +1,16 @@
+NewtonMethodSubstationDayCalcResult:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表xpath
+  DayCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #变电站损耗表xpath
+  SubLossResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[9]/td/div'
+  #报表iframe的ID
+  SubLossResultIframe_ID: 'iframe_4028801b3e3fabd9013e3fb9136e0060'
+
+  #查询按钮ID
+  Query_ID: '4028801b3e205979013e20b5050e000c-btnInnerEl'
+  #导出按钮ID
+  Export_ID: '4028801b3e205979013e20b504ee0000-btnIconEl'

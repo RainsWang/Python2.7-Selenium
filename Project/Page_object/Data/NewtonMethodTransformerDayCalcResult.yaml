@@ -1,0 +1,16 @@
+NewtonMethodTransformerDayCalcResult  :
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表xpath
+  DayCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #变压器损耗表xpath
+  TransLossResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[10]/td/div'
+  #报表iframe的ID
+  TransLossResultIframe_ID: 'iframe_4028801b3e3fabd9013e3fba9f3100d4'
+
+  #查询按钮ID
+  Query_ID: '4028801b3e2f6b33013e2f8024b10011-btnIconEl'
+  #导出按钮ID
+  Export_ID: '4028801b3e2f6b33013e2f8024a70005-btnInnerEl'

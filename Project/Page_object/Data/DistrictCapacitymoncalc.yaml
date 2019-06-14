@@ -1,0 +1,29 @@
+﻿#! -*- encoding:utf-8 -*-
+DistrictCapacitymoncalc:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd'
+  #TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd-textEl'
+  #理论线损手工计算Xpath
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[2]/div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td/div/img[2]'
+  #切换到配电网400V理论线损所在frame并点击
+  TheoreticalLineloss400V_Frame: 'iframe_13000110'
+  TheoreticalLineloss400V_ID: 'tab-1163-btnInnerEl'
+  #直接选择计算的台区
+  #勾选wm县电量法配线月结果验证，总共四层，单位、变电站、配电线路、台区
+  #单位xpath
+  PowerlawCalculationResultsCom_Xpath: '//div/div[2]/div[2]/div/div/div[2]/div/div[2]/div/table/tbody/tr[2]/td/div/img'
+  #变电站xpath
+  PowerlawCalculationResultsSub_Xpath: '//div/div[2]/div[2]/div/div/div[2]/div/div[2]/div/table/tbody/tr[3]/td/div/img[2]'
+  #配电线路
+  PowerlawCalculationResultsWiring_Xpath: '//div/div[2]/div[2]/div/div/div[2]/div/div[2]/div/table/tbody/tr[4]/td/div/img[3]'
+  #台区
+  PowerlawCalculationResultsDistrict_Xpath: '//div/div[2]/div[2]/div/div/div[2]/div/div[2]/div/table/tbody/tr[5]/td/div/input'
+  #计算方法容量法
+  CapacityCalaMethod_id: 'radiofield-1126-boxLabelEl'
+  # 选择月数据
+  Districtmoncalc_ID: 'district400monCalcData-inputEl'
+  #点击计算按钮
+  Calculate_ID: 'district400_calc_start_button-btnInnerEl'
+  #计算成功后弹出框信息ID以及取消按钮ID
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  AlertConfirm_ID: 'button-1006-btnInnerEl'

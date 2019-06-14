@@ -1,0 +1,14 @@
+#! -*- encoding:utf-8 -*-
+DistributionlineEleQuadaycalcResult:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd-textEl'
+  #配电网计算结果查询
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #日报表
+  DistributionLineDayReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[7]/td/div/img[2]'
+  #配电线路线损表
+  Linelossmeterofdistributionline_Xpath: '//div[3]/div[3]/div/table/tbody/tr[8]/td/div/img[4]'
+  #切换到frame
+  DistributionLineCalcResult_frame: 'iframe_297efe173af22531013af33990d80000'
+  #导出按钮
+  Daochu_id: 'button-1083-btnIconEl'

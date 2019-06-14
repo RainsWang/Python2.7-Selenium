@@ -1,0 +1,2828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0076)http://localhost:63342/Auto/EagleProjecttest/Report/2019-04-18_14_19_38.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>eagle2理论线损测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2">
+    
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class="heading">
+<h1>eagle2 6.20版本自动化测试报告</h1>
+<p class="attribute"><strong>Start Time:</strong> 2019-04-18 14:19:38</p>
+<p class="attribute"><strong>Duration:</strong> 2:16:03.826000</p>
+<p class="attribute"><strong>Status:</strong> Pass 76 Failure 8 Error 5</p>
+
+<p class="description">eagle2 6.20版本自动化测试报告</p>
+</div>
+
+
+
+<p id="show_detail_line">Show
+<a href="javascript:showCase(0)">Summary</a>
+<a href="javascript:showCase(1)">Failed</a>
+<a href="javascript:showCase(2)">All</a>
+</p>
+<table id="result_table">
+<colgroup>
+<col align="left">
+<col align="right">
+<col align="right">
+<col align="right">
+<col align="right">
+<col align="right">
+</colgroup>
+<tbody><tr id="header_row">
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class="errorClass">
+    <td>eagle400v.DistrictCapacitymoncalcPcs.DistrictCapacitymoncalcPcs: 400V理论手工计算容量法月计算流程：</td>
+    <td>4</td>
+    <td>3</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail(&#39;c1&#39;,4)">Detail</a></td>
+</tr>
+
+<tr id="pt1.1" class="">
+    <td class="none"><div class="testcase">test_A1_DistrictCapacitymoncalc: 台区月容量法损耗计算过程</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt1.1&#39;)">
+        pass</a>
+
+    <div id="div_pt1.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt1.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt1.1: 2019-04-18 14:19:52,969 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:19:52,969 INFO    : 登录成功！
+2019-04-18 14:20:59,638 INFO    : 计算成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt1.2" class="">
+    <td class="none"><div class="testcase">test_A2_DistrictCapacitymoncalcResult: 台区月容量法损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt1.2&#39;)">
+        pass</a>
+
+    <div id="div_pt1.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt1.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt1.2: 2019-04-18 14:21:26,078 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:21:26,078 INFO    : 登录成功！
+2019-04-18 14:21:59,855 INFO    : 返回的计算结果[{u'\u5b9e\u9645\u7ebf\u635f\u7387\uff08%\uff09': 0.0, u'\u5bfc\u7ebf\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.1808683674633951, u'\u6e29\u5ea6\uff08\u2103\uff09': 20.0, u'\u4e0b\u6237\u7ebf\u635f\u8017\uff08kWh\uff09': 0.0, u'\u8ba1\u7b97\u65b9\u6cd5': u'\u5bb9\u91cf\u8fed\u4ee3\u6cd5', u'\u4e0b\u6237\u7ebf\u957f\u5ea6\uff08km\uff09': u'', u'\u552e\u7535\u91cf\uff08kWh\uff09': 100.0, u'\u7ebf\u8def': u'\u914d\u7535\u7ebf\u8def1', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 0.45143, u'\u65e0\u529f\u7535\u91cf\uff08kvarh\uff09': 10.0, u'\u5b9e\u9645\u635f\u8017\u7535\u91cf\uff08kWh\uff09': 0.0, u'\u4e09\u76f8\u4e09\u7ebf\u8868\u6570': 0.0, u'\u53f0\u533a\u540d\u79f0': u'\u914d\u53d80710', u'\u603b\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.18906281190783955, u'\u4f9b\u7535\u65f6\u95f4\uff08h\uff09': 744.0, u'\u5355\u76f8\u8868\u6570': 3.0, u'\u6709\u529f\u7535\u91cf\uff08kWh\uff09': 100.0, u'\u7406\u8bba\u4f9b\u7535\u91cf\u7ebf\u635f\u7387\uff08%\uff09': 5.762234303998614, u'\u7535\u8868\u635f\u8017\uff08kWh\uff09': 6.096666666666667, u'\u7535\u538b\uff08kV\uff09': 0.4, u'\u7406\u8bba\u4f9b\u7535\u91cf\uff08kWh\uff09': 106.114570163502, u'\u4e09\u76f8\u56db\u7ebf\u8868\u6570': 1.0, u'\u7ebf\u635f\u7387\uff08%\uff09': 6.11457, u'\u603b\u635f\u8017\uff08kWh\uff09': 6.114570163501991, u'\u7535\u8868\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.008194444444444445, u'\u5bfc\u7ebf\u635f\u8017\uff08kWh\uff09': 0.017903496835324304, u'\u4f9b\u7535\u534a\u5f84\uff08km\uff09': 0.45143000793457033, u'K\u7cfb\u6570': 1.0, u'\u529f\u7387\u56e0\u6570': 0.9950371902099892, u'\u53d8\u538b\u5668\u540d\u79f0': u'\u914d\u53d80710'}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft1.3" class="">
+    <td class="errorCase"><div class="testcase">test_A3_DistrictCapacitymonWirecalcResult: 台区月容量法导线损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft1.3&#39;)">
+        error</a>
+
+    <div id="div_ft1.3" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft1.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft1.3: 2019-04-18 14:22:26,293 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:22:26,293 INFO    : 登录成功！
+2019-04-18 14:22:26,303 ERROR   : 'DistrictEleQuamonWirecalcResult'
+2019-04-18 14:22:26,607 ERROR   : 返回的结果不正确
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagle400v\DistrictCapacitymoncalcPcs.py", line 117, in test_A3_DistrictCapacitymonWirecalcResult
+    raise e
+KeyError: 'DistrictEleQuamonWirecalcResult'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt1.4" class="">
+    <td class="none"><div class="testcase">test_A4_DistrictCapacitymonMetercalResult: 台区月容量法电表损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt1.4&#39;)">
+        pass</a>
+
+    <div id="div_pt1.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt1.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt1.4: 2019-04-18 14:22:53,095 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:22:53,096 INFO    : 登录成功！
+2019-04-18 14:23:38,220 INFO    : 返回的计算结果[{u'\u635f\u8017\uff08kWh\uff09': 3.2033333333333336, u'\u552e\u7535\u91cf\uff08kWh\uff09': 50.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.23091504992885512, u'\u7c7b\u578b': u'\u8868\u7bb1', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 52.38852850939717}, {u'\u635f\u8017\uff08kWh\uff09': 0.7233333333333333, u'\u552e\u7535\u91cf\uff08kWh\uff09': 25.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.39996541897794763, u'\u7c7b\u578b': u'\u7528\u6237', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 11.82966772792839}, {u'\u635f\u8017\uff08kWh\uff09': 2.17, u'\u552e\u7535\u91cf\uff08kWh\uff09': 25.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.3999802832992207, u'\u7c7b\u578b': u'\u7528\u6237', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 35.48900318378517}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="errorClass">
+    <td>eagle400v.DistrictEleQuamoncalcPcs.DistrictEleQuamoncalcPcs: 400V理论计算电量法月计算流程：</td>
+    <td>5</td>
+    <td>4</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail(&#39;c2&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt2.1" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A1_DistrictmoncalcPcsEnter: 台区月理论运行数据录入</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt2.1&#39;)">
+        pass</a>
+
+    <div id="div_pt2.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt2.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt2.1: 2019-04-18 14:24:04,625 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:24:04,625 INFO    : 登录成功！
+2019-04-18 14:25:23,029 INFO    : 录入数据成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt2.2" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A2_DistrictEleQuamoncalc: 台区月电量法理论手工计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt2.2&#39;)">
+        pass</a>
+
+    <div id="div_pt2.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt2.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt2.2: 2019-04-18 14:25:49,627 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:25:49,627 INFO    : 登录成功！
+2019-04-18 14:26:47,069 INFO    : 计算成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt2.3" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A3_DistrictEleQuamoncalcResult: 台区月电量法损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt2.3&#39;)">
+        pass</a>
+
+    <div id="div_pt2.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt2.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt2.3: 2019-04-18 14:27:13,536 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:27:13,536 INFO    : 登录成功！
+2019-04-18 14:27:48,305 INFO    : 返回的计算结果[{u'\u5b9e\u9645\u7ebf\u635f\u7387\uff08%\uff09': 0.0, u'\u5bfc\u7ebf\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.18875776141466077, u'\u6e29\u5ea6\uff08\u2103\uff09': 20.0, u'\u4e0b\u6237\u7ebf\u635f\u8017\uff08kWh\uff09': 0.0, u'\u8ba1\u7b97\u65b9\u6cd5': u'\u7535\u91cf\u8fed\u4ee3\u6cd5', u'\u4e0b\u6237\u7ebf\u957f\u5ea6\uff08km\uff09': u'', u'\u552e\u7535\u91cf\uff08kWh\uff09': 100.0, u'\u7ebf\u8def': u'\u914d\u7535\u7ebf\u8def1', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 0.45143, u'\u65e0\u529f\u7535\u91cf\uff08kvarh\uff09': 10.0, u'\u5b9e\u9645\u635f\u8017\u7535\u91cf\uff08kWh\uff09': 0.0, u'\u4e09\u76f8\u4e09\u7ebf\u8868\u6570': 0.0, u'\u53f0\u533a\u540d\u79f0': u'\u914d\u53d80710', u'\u603b\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.19695220585910522, u'\u4f9b\u7535\u65f6\u95f4\uff08h\uff09': 744.0, u'\u5355\u76f8\u8868\u6570': 3.0, u'\u6709\u529f\u7535\u91cf\uff08kWh\uff09': 100.0, u'\u7406\u8bba\u4f9b\u7535\u91cf\u7ebf\u635f\u7387\uff08%\uff09': 5.7629278346395205, u'\u7535\u8868\u635f\u8017\uff08kWh\uff09': 6.096666666666667, u'\u7535\u538b\uff08kV\uff09': 0.4, u'\u7406\u8bba\u4f9b\u7535\u91cf\uff08kWh\uff09': 106.1153511056956, u'\u4e09\u76f8\u56db\u7ebf\u8868\u6570': 1.0, u'\u7ebf\u635f\u7387\uff08%\uff09': 6.115351, u'\u603b\u635f\u8017\uff08kWh\uff09': 6.115351105695588, u'\u7535\u8868\u7b49\u503c\u7535\u963b\uff08\u03a9\uff09': 0.008194444444444445, u'\u5bfc\u7ebf\u635f\u8017\uff08kWh\uff09': 0.01868443902892097, u'\u4f9b\u7535\u534a\u5f84\uff08km\uff09': 0.45143000793457033, u'K\u7cfb\u6570': 1.0, u'\u529f\u7387\u56e0\u6570': 0.9950371902099892, u'\u53d8\u538b\u5668\u540d\u79f0': u'\u914d\u53d80710'}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft2.4" class="none">
+    <td class="errorCase"><div class="testcase">test_A4_DistrictEleQuamonWirecalcResult: 台区月电量法导线损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft2.4&#39;)">
+        error</a>
+
+    <div id="div_ft2.4" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft2.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft2.4: 2019-04-18 14:28:14,878 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:28:14,878 INFO    : 登录成功！
+2019-04-18 14:28:14,894 ERROR   : 'DistrictEleQuamonWirecalcResult'
+2019-04-18 14:28:15,194 ERROR   : 返回的结果不正确
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagle400v\DistrictEleQuamoncalcPcs.py", line 148, in test_A4_DistrictEleQuamonWirecalcResult
+    raise e
+KeyError: 'DistrictEleQuamonWirecalcResult'
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt2.5" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A5_DistrictEleQuamonMetercalResult: 台区月电量法电表损耗计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt2.5&#39;)">
+        pass</a>
+
+    <div id="div_pt2.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt2.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt2.5: 2019-04-18 14:28:41,467 INFO    : 登录用户名:wm县 密码:000000返回结果:wm县
+2019-04-18 14:28:41,467 INFO    : 登录成功！
+2019-04-18 14:29:27,085 INFO    : 返回的计算结果[{u'\u635f\u8017\uff08kWh\uff09': 3.2033333333333336, u'\u552e\u7535\u91cf\uff08kWh\uff09': 50.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.23091447674673252, u'\u7c7b\u578b': u'\u8868\u7bb1', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 52.381838392727445}, {u'\u635f\u8017\uff08kWh\uff09': 0.7233333333333333, u'\u552e\u7535\u91cf\uff08kWh\uff09': 30.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.39996442619738926, u'\u7c7b\u578b': u'\u7528\u6237', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 11.828157056422324}, {u'\u635f\u8017\uff08kWh\uff09': 2.17, u'\u552e\u7535\u91cf\uff08kWh\uff09': 20.0, u'\u5355\u4f4d': u'wm\u53bf', u'\u7535\u538b\uff08kV\uff09': 0.3999802832992207, u'\u7c7b\u578b': u'\u7528\u6237', u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 35.484471169266975}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="passClass">
+    <td>eagle620kv.DistributionlineEleQuadaycalcPcs.DistributionlineEleQuadaycalcPcs: 配线运行数据录入以及结果核对</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c3&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt3.1" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A1_DistributionlineMeasDayEnter: 单线图日电量法理论运行数据录入</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt3.1&#39;)">
+        pass</a>
+
+    <div id="div_pt3.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt3.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt3.1: 2019-04-18 14:29:53,539 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:29:53,539 INFO    : 登录成功！
+2019-04-18 14:31:32,546 INFO    : 录入数据成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt3.2" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A2_DistributionlineEleQuadaycalc: 6-20kv日电量法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt3.2&#39;)">
+        pass</a>
+
+    <div id="div_pt3.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt3.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt3.2: 2019-04-18 14:31:59,029 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:31:59,029 INFO    : 登录成功！
+2019-04-18 14:32:41,598 INFO    : 计算成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt3.3" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A3_DistributionlineEleQuadaycalcResult: 单线图日电量法整体计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt3.3&#39;)">
+        pass</a>
+
+    <div id="div_pt3.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt3.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt3.3: 2019-04-18 14:33:07,947 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:33:07,947 INFO    : 登录成功！
+2019-04-18 14:33:34,595 INFO    : 返回的计算结果[{u'\u516c\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 284.3420843974289, u'\u5b9e\u9645\u7ebf\u635f\u7387\uff08%\uff09': 86.63366336633663, u'\u9996\u7aef\u5e73\u5747\u7535\u6d41\uff08A\uff09': 69.18048837860398, u'\u7ebf\u8def\u540d\u79f0': u'\u914d\u7ebf\u5404\u79cd\u8ba1\u7b97\u65b9\u6cd5\u8ba1\u7b97\u7ed3\u679c\u9a8c\u8bc1', u'\u7535\u5bb9\u5668\u635f\u8017\uff08kWh\uff09': 0.0, u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 448.50208399999997, u'\u8ba1\u7b97\u65b9\u6cd5': u'\u7535\u91cf\u6cd5', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 30.238580001831053, u'\u53d8\u538b\u5668\u94c1\u635f\uff08kWh\uff09': 164.16, u'\u53d8\u538b\u5668\u94dc\u94c1\u6bd4\uff08%\uff09': 1.7321033406276127, u'k\u7cfb\u6570': 1.23, u'\u7ecf\u6d4e\u8d1f\u8f7d\u7387\uff08%\uff09': 3.608486543417424, u'\u65e0\u529f\u7535\u91cf\uff08kvarh\uff09': 28205.603181022256, u'\u552e\u7535\u91cf\uff08kWh\uff09': 891.0, u'\u53d8\u538b\u5668\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 0.8104094811294749, u'\u6700\u4f73\u7ebf\u635f\u7387\uff08%\uff09': 37.20741043944651, u'\u7ecf\u6d4e\u8d1f\u8377\u7535\u6d41\uff08A\uff09': 9.22928780003672, u'\u5907\u6ce8': u'', u'\u4f9b\u7535\u65f6\u95f4\uff08h\uff09': 24.0, u'\u7406\u8bba\u7ebf\u635f\u7387\u4e0d\u542b\u4e13\u53d8\uff08%\uff09': 140.84176804764658, u'\u5747\u65b9\u6839\u7535\u6d41\uff08A\uff09': 0.0, u'\u5bfc\u7ebf\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 16.88205148906367, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u6709\u529f\u7535\u91cf\uff08kWh\uff09': 6666.0, u'\u7535\u8868\u635f\u8017\uff08kWh\uff09': 0.8, u'\u7535\u538b\uff08kV\uff09': 10.0, u'\u53d8\u538b\u5668\u94dc\u635f\uff08kWh\uff09': 284.3420843974289, u'\u7ebf\u635f\u7387\uff08%\uff09': 140.84176804680467, u'\u603b\u635f\u8017\uff08kWh\uff09': 9388.51225805612, u'\u516c\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 164.16, u'\u4e13\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u5355\u4f4d': u'lyl\u76f4\u7ba1', u'\u53d8\u538b\u5668\u6570\u91cf': 4.0, u'\u603b\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 17.692460970193146, u'\u5bfc\u7ebf\u635f\u8017\uff08kWh\uff09': 8939.210173658692, u'\u4f9b\u7535\u534a\u5f84\uff08km\uff09': 30.238580001831053, u'\u4e13\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u529f\u7387\u56e0\u6570': 0.23}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt3.4" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A4_DistAclinesegeEleQuaDayCalResult: 单线图日电量法导线损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt3.4&#39;)">
+        pass</a>
+
+    <div id="div_pt3.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt3.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt3.4: 2019-04-18 14:34:01,053 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:34:01,053 INFO    : 登录成功！
+2019-04-18 14:34:31,540 INFO    : 返回的计算结果[{u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 92.93634447920944, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u7535\u6d41\uff08A\uff09': 69.72132055105155, u'\u635f\u8017\uff08kWh\uff09': 8725.340093619841, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 891.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 25.351, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb51', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 8.261861965317786, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 10.0}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.25409979324887966, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 2430.0, u'\u7535\u6d41\uff08A\uff09': 52.427929033899595, u'\u635f\u8017\uff08kWh\uff09': 23.856190236866322, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 670.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 0.122580002, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb52', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 8.255542128131431, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.261861965317786}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 1.2169026500339808, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1800.0, u'\u7535\u6d41\uff08A\uff09': 35.05628687639853, u'\u635f\u8017\uff08kWh\uff09': 114.24905446705006, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 448.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 1.313, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb53', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 8.210277995374069, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.255542128131431}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.8069951154393253, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1400.0, u'\u7535\u6d41\uff08A\uff09': 17.60639407854837, u'\u635f\u8017\uff08kWh\uff09': 75.7648353349352, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 225.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 3.452, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb54', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 8.150510539587424, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.210277995374069}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt3.5" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A5_DistTransformerEleQuaDayCalResult: 单线图日电量法变压器损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt3.5&#39;)">
+        pass</a>
+
+    <div id="div_pt3.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt3.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt3.5: 2019-04-18 14:34:58,051 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:34:58,051 INFO    : 登录成功！
+2019-04-18 14:35:27,766 INFO    : 返回的计算结果[{u'\u7535\u6d41\uff08A\uff09': 2.3114929255599153, u'\u94c1\u635f\uff08kWh\uff09': 47.04, u'\u552e\u7535\u91cf\uff08kWh\uff09': 221.0, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.5997866093724297, u'\u578b\u53f7': u'S11-2000', u'\u540d\u79f0': u'\u516c\u7528\u53d81', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 56.311039343109734, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 9.271039343109733, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.261861965317786}, {u'\u7535\u6d41\uff08A\uff09': 2.3219521695669734, u'\u94c1\u635f\uff08kWh\uff09': 51.84, u'\u552e\u7535\u91cf\uff08kWh\uff09': 222.0, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 1.0936585309724534, u'\u578b\u53f7': u'JB1300-73-630', u'\u540d\u79f0': u'\u516c\u7528\u53d82', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 102.67826524162527, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 50.83826524162527, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.255542128131431}, {u'\u7535\u6d41\uff08A\uff09': 2.3324114135740315, u'\u94c1\u635f\uff08kWh\uff09': 22.080000000000002, u'\u552e\u7535\u91cf\uff08kWh\uff09': 223.0, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 1.2086611732691324, u'\u578b\u53f7': u'BS8-400', u'\u540d\u79f0': u'\u516c\u7528\u53d83', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 113.47530241073741, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 91.39530241073741, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.210277995374069}, {u'\u7535\u6d41\uff08A\uff09': 2.3533299015881486, u'\u94c1\u635f\uff08kWh\uff09': 43.2, u'\u552e\u7535\u91cf\uff08kWh\uff09': 225.0, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 1.875030596577235, u'\u578b\u53f7': u'DJ-1400', u'\u540d\u79f0': u'\u516c\u7528\u53d84', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 176.0374774019565, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 132.83747740195648, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 8.150510539587424}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="passClass">
+    <td>eagle620kv.DistributionlineEleQuamoncalcPcs.DistributionlineEleQuamoncalcPcs: 配线运行数据录入以及结果核对</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c4&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt4.1" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A1_DistributionlineMeasMonthEnter: 单线图月电量法理论运行数据录入</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt4.1&#39;)">
+        pass</a>
+
+    <div id="div_pt4.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt4.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt4.1: 2019-04-18 14:35:54,312 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:35:54,312 INFO    : 登录成功！
+2019-04-18 14:37:13,394 INFO    : 未修改输入数据，请确认数据是否为正确的数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt4.2" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A2_DistributionlineEleQuamoncalc: 6-20kv月电量法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt4.2&#39;)">
+        pass</a>
+
+    <div id="div_pt4.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt4.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt4.2: 2019-04-18 14:37:40,319 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:37:40,319 INFO    : 登录成功！
+2019-04-18 14:38:21,483 INFO    : 计算成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt4.3" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A3_DistributionlineEleQuamoncalcResult: 单线图月电量法整体计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt4.3&#39;)">
+        pass</a>
+
+    <div id="div_pt4.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt4.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt4.3: 2019-04-18 14:38:48,171 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:38:48,171 INFO    : 登录成功！
+2019-04-18 14:39:13,303 INFO    : 返回的计算结果[{u'\u516c\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 13.842570601195956, u'\u5b9e\u9645\u7ebf\u635f\u7387\uff08%\uff09': 86.63366336633663, u'\u9996\u7aef\u5e73\u5747\u7535\u6d41\uff08A\uff09': 2.2490748564855334, u'\u7ebf\u8def\u540d\u79f0': u'\u914d\u7ebf\u5404\u79cd\u8ba1\u7b97\u65b9\u6cd5\u8ba1\u7b97\u7ed3\u679c\u9a8c\u8bc1', u'\u7535\u5bb9\u5668\u635f\u8017\uff08kWh\uff09': 0.0, u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 5102.802571, u'\u8ba1\u7b97\u65b9\u6cd5': u'\u7535\u91cf\u6cd5', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 30.238580001831053, u'\u53d8\u538b\u5668\u94c1\u635f\uff08kWh\uff09': 5088.96, u'\u53d8\u538b\u5668\u94dc\u94c1\u6bd4\uff08%\uff09': 0.002720117784615315, u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u53d8\u7535\u7ad91', u'\u7ecf\u6d4e\u8d1f\u8f7d\u7387\uff08%\uff09': 3.608486543417424, u'\u65e0\u529f\u7535\u91cf\uff08kvarh\uff09': 28205.603181022256, u'\u552e\u7535\u91cf\uff08kWh\uff09': 891.0, u'\u53d8\u538b\u5668\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 0.8104094811294749, u'\u6700\u4f73\u7ebf\u635f\u7387\uff08%\uff09': 37.20741043944651, u'\u7ecf\u6d4e\u8d1f\u8377\u7535\u6d41\uff08A\uff09': 9.22928780003672, u'\u5907\u6ce8': u'', u'\u4f9b\u7535\u65f6\u95f4\uff08h\uff09': 744.0, u'\u7406\u8bba\u7ebf\u635f\u7387\u4e0d\u542b\u4e13\u53d8\uff08%\uff09': 81.24758759535425, u'\u5747\u65b9\u6839\u7535\u6d41\uff08A\uff09': 0.0, u'\u5bfc\u7ebf\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 16.88205148906367, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u6709\u529f\u7535\u91cf\uff08kWh\uff09': 6666.0, u'\u7535\u8868\u635f\u8017\uff08kWh\uff09': 24.8, u'\u7535\u538b\uff08kV\uff09': 10.0, u'\u53d8\u538b\u5668\u94dc\u635f\uff08kWh\uff09': 13.842570601195954, u'\u8d1f\u8377\u5f62\u72b6\u7cfb\u6570': 1.23, u'\u7ebf\u635f\u7387\uff08%\uff09': 81.24758759375939, u'\u603b\u635f\u8017\uff08kWh\uff09': 5415.964189106315, u'\u516c\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 5088.96, u'\u4e13\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u53d8\u538b\u5668\u6570\u91cf': 4.0, u'\u603b\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 17.692460970193146, u'\u5bfc\u7ebf\u635f\u8017\uff08kWh\uff09': 288.36161850511905, u'\u4f9b\u7535\u534a\u5f84\uff08km\uff09': 30.238580001831053, u'\u4e13\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u529f\u7387\u56e0\u6570': 0.23}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt4.4" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A4_DistAclinesegeEleQuaMonCalResult: 单线图月电量法导线损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt4.4&#39;)">
+        pass</a>
+
+    <div id="div_pt4.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt4.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt4.4: 2019-04-18 14:39:39,959 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:39:39,959 INFO    : 登录成功！
+2019-04-18 14:40:10,862 INFO    : 返回的计算结果[{u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 5.19690629105877, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u7535\u6d41\uff08A\uff09': 2.249074856485534, u'\u635f\u8017\uff08kWh\uff09': 281.46258366515616, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 891.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 25.351, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb51', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.943931031139284, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 10.0}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.014209003178377092, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 2430.0, u'\u7535\u6d41\uff08A\uff09': 1.6912235172225676, u'\u635f\u8017\uff08kWh\uff09': 0.7695545237698813, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 670.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 0.122580002, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb52', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.943727165423596, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.943931031139284}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.06804796415230684, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1800.0, u'\u7535\u6d41\uff08A\uff09': 1.1308479637547915, u'\u635f\u8017\uff08kWh\uff09': 3.6854533699048404, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 448.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 1.313, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb53', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.942267032108843, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.943727165423596}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.0451263498234378, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1400.0, u'\u7535\u6d41\uff08A\uff09': 0.5679481960822055, u'\u635f\u8017\uff08kWh\uff09': 2.4440269462882322, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': 225.0, u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 3.452, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb54', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.940339049664113, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.942267032108843}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt4.5" class="hiddenRow">
+    <td class="none"><div class="testcase">test_A5_DistTransformerEleQuaMonCalResult: 单线图月电量法变压器损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt4.5&#39;)">
+        pass</a>
+
+    <div id="div_pt4.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt4.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt4.5: 2019-04-18 14:40:38,400 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 14:40:38,400 INFO    : 登录成功！
+2019-04-18 14:41:08,302 INFO    : 返回的计算结果[{u'\u7535\u6d41\uff08A\uff09': 0.07456428792128758, u'\u94c1\u635f\uff08kWh\uff09': 1458.24, u'\u552e\u7535\u91cf\uff08kWh\uff09': 221.0, u'\u578b\u53f7': u'S11-2000', u'\u540d\u79f0': u'\u516c\u7528\u53d81', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 1458.6813576551601, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 0.4413576551601685, u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 26.932994878163264, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.943931031139284}, {u'\u7535\u6d41\uff08A\uff09': 0.0749016828892572, u'\u94c1\u635f\uff08kWh\uff09': 1607.04, u'\u552e\u7535\u91cf\uff08kWh\uff09': 222.0, u'\u578b\u53f7': u'JB1300-73-630', u'\u540d\u79f0': u'\u516c\u7528\u53d82', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 1609.4979299596284, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 2.4579299596285527, u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 29.71766196676442, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.943727165423596}, {u'\u7535\u6d41\uff08A\uff09': 0.07523907785722683, u'\u94c1\u635f\uff08kWh\uff09': 684.48, u'\u552e\u7535\u91cf\uff08kWh\uff09': 223.0, u'\u578b\u53f7': u'BS8-400', u'\u540d\u79f0': u'\u516c\u7528\u53d83', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 688.9403855812002, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 4.460385581200146, u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 12.720549130788879, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.942267032108843}, {u'\u7535\u6d41\uff08A\uff09': 0.07591386779316608, u'\u94c1\u635f\uff08kWh\uff09': 1339.2, u'\u552e\u7535\u91cf\uff08kWh\uff09': 225.0, u'\u578b\u53f7': u'DJ-1400', u'\u540d\u79f0': u'\u516c\u7528\u53d84', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 1345.682897405207, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 6.482897405207089, u'\u5360\u603b\u635f\u8017\u7684\u767e\u5206\u6bd4\uff08%\uff09': 24.846598877295335, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.940339049664113}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="failClass">
+    <td>eagle620kv.DistributionlineFlowDayCalcProc.DistributionlineFlowDayCalcProc: 6-20kV潮流精确算法日计算整体流程。</td>
+    <td>17</td>
+    <td>15</td>
+    <td>2</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c5&#39;,17)">Detail</a></td>
+</tr>
+
+<tr id="pt5.1" class="">
+    <td class="none"><div class="testcase">test_A01_DistributionlineMeasDayEnter: 登录并录入配线、配变日运行数据</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.1&#39;)">
+        pass</a>
+
+    <div id="div_pt5.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.1: 2019-04-18 14:41:32,928 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 14:41:32,928 INFO    : 登录成功！
+2019-04-18 14:43:06,562 INFO    : 未修改输入数据，请确认数据是否为正确的数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.2" class="">
+    <td class="none"><div class="testcase">test_A02_DistributionlineMeasDayEnter: 登录并录入配变24点功率、电压</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.2&#39;)">
+        pass</a>
+
+    <div id="div_pt5.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.2: 2019-04-18 14:43:31,052 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 14:43:31,052 INFO    : 登录成功！
+2019-04-18 15:00:24,197 INFO    : 未修改输入数据，请确认数据是否为正确的数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.3" class="">
+    <td class="none"><div class="testcase">test_A03_DistributionlineFlowDayCalc: 配电线路潮流精确算法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.3&#39;)">
+        pass</a>
+
+    <div id="div_pt5.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.3: 2019-04-18 15:00:48,944 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:00:48,944 INFO    : 登录成功！
+2019-04-18 15:01:51,437 INFO    : 计算成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.4" class="">
+    <td class="none"><div class="testcase">test_A04_DistributionlineFlowDayCalcResult: 潮流精确算法配电线路线损表结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.4&#39;)">
+        pass</a>
+
+    <div id="div_pt5.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.4: 2019-04-18 15:02:16,145 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:02:16,145 INFO    : 登录成功！
+2019-04-18 15:02:45,984 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.5" class="">
+    <td class="none"><div class="testcase">test_A05_DistAclinesegeFlowDayCalcResult: 潮流精确算法配线导线损耗结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.5&#39;)">
+        pass</a>
+
+    <div id="div_pt5.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.5: 2019-04-18 15:03:10,480 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:03:10,480 INFO    : 登录成功！
+2019-04-18 15:03:39,092 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.6" class="">
+    <td class="none"><div class="testcase">test_A06_DistTransformerFlowDayCalcResult: 潮流精确算法配电变压器损耗结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.6&#39;)">
+        pass</a>
+
+    <div id="div_pt5.6" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.6&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.6: 2019-04-18 15:04:03,615 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:04:03,615 INFO    : 登录成功！
+2019-04-18 15:04:31,552 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.7" class="">
+    <td class="none"><div class="testcase">test_A07_DistributionlineComAStDay: 潮流精确算法-配电线路综合分析日报表结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.7&#39;)">
+        pass</a>
+
+    <div id="div_pt5.7" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.7&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.7: 2019-04-18 15:04:56,308 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:04:56,308 INFO    : 登录成功！
+2019-04-18 15:05:44,977 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.8" class="">
+    <td class="none"><div class="testcase">test_A09_DistributionlineComAPowFADay: 配线综合分析-功率因数追溯结果报表核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.8&#39;)">
+        pass</a>
+
+    <div id="div_pt5.8" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.8&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.8: 2019-04-18 15:06:09,509 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:06:09,509 INFO    : 登录成功！
+2019-04-18 15:07:09,381 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.9" class="">
+    <td class="none"><div class="testcase">test_A10_DistributionlineComAHlAclDay: 配线综合分析-导线损耗电量追溯结果报表核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.9&#39;)">
+        pass</a>
+
+    <div id="div_pt5.9" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.9&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.9: 2019-04-18 15:07:33,926 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:07:33,926 INFO    : 登录成功！
+2019-04-18 15:08:26,954 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft5.10" class="">
+    <td class="failCase"><div class="testcase">test_A11_DistributionlineComAHlTraDay: 配线综合分析-变压器损耗电量追溯结果报表核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft5.10&#39;)">
+        fail</a>
+
+    <div id="div_ft5.10" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft5.10&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft5.10: 2019-04-18 15:08:51,446 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:08:51,446 INFO    : 登录成功！
+2019-04-18 15:09:48,851 ERROR   : Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 1:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'': 0.0, u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u635f\u8017\u7535\u91cf(kWh)': 0.0, u'\u552e\u7535\u91cf(kWh)': 7567.200000000003, u'\u5355\u4f4d': u'\u8ba1\u7b97\u7ed3\u679c\u56fe\u5f62', u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4(%)': 0.0, u'\u914d\u7535\u540d\u79f0': u'\u516c\u7528\u53d81'}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'': 0.0, u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u635f\u8017\u7535\u91cf(kWh)': 0.0, u'\u552e\u7535\u91cf(kWh)': 6367.200000000003, u'\u5355\u4f4d': u'\u8ba1\u7b97\u7ed3\u679c\u56fe\u5f62', u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4(%)': 0.0, u'\u914d\u7535\u540d\u79f0': u'\u516c\u7528\u53d83'}
+
+Diff is 2267 characters long. Set self.maxDiff to None to see it.
+2019-04-18 15:09:49,164 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagle620kv\DistributionlineFlowDayCalcProc.py", line 359, in test_A11_DistributionlineComAHlTraDay
+    raise e
+AssertionError: Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 1:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'': 0.0, u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u635f\u8017\u7535\u91cf(kWh)': 0.0, u'\u552e\u7535\u91cf(kWh)': 7567.200000000003, u'\u5355\u4f4d': u'\u8ba1\u7b97\u7ed3\u679c\u56fe\u5f62', u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4(%)': 0.0, u'\u914d\u7535\u540d\u79f0': u'\u516c\u7528\u53d81'}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'': 0.0, u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u635f\u8017\u7535\u91cf(kWh)': 0.0, u'\u552e\u7535\u91cf(kWh)': 6367.200000000003, u'\u5355\u4f4d': u'\u8ba1\u7b97\u7ed3\u679c\u56fe\u5f62', u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4(%)': 0.0, u'\u914d\u7535\u540d\u79f0': u'\u516c\u7528\u53d83'}
+
+Diff is 2267 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.11" class="">
+    <td class="none"><div class="testcase">test_A12_DistributionlineComAEconTranDay: 配线综合分析-变压器台数追溯结果报表核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.11&#39;)">
+        pass</a>
+
+    <div id="div_pt5.11" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.11&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.11: 2019-04-18 15:10:13,907 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:10:13,907 INFO    : 登录成功！
+2019-04-18 15:11:07,335 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.12" class="">
+    <td class="none"><div class="testcase">test_A13_DistributionlineOverloadTranDay: 配线综合分析-重载变追溯结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.12&#39;)">
+        pass</a>
+
+    <div id="div_pt5.12" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.12&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.12: 2019-04-18 15:11:31,970 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:11:31,970 INFO    : 登录成功！
+表数据为空！！
+表数据为空！！
+2019-04-18 15:12:37,051 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.13" class="">
+    <td class="none"><div class="testcase">test_A14_DistributionlineEconomicTranDay: 配线综合分析-经济变追溯结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.13&#39;)">
+        pass</a>
+
+    <div id="div_pt5.13" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.13&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.13: 2019-04-18 15:13:01,565 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:13:01,565 INFO    : 登录成功！
+表数据为空！！
+表数据为空！！
+2019-04-18 15:14:06,691 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft5.14" class="">
+    <td class="failCase"><div class="testcase">test_A15_DistributionlineLightloadTranDay: 配线综合分析-轻载变追溯结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft5.14&#39;)">
+        fail</a>
+
+    <div id="div_ft5.14" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft5.14&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft5.14: 2019-04-18 15:14:31,296 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:14:31,296 INFO    : 登录成功！
+2019-04-18 15:15:42,082 ERROR   : Lists differ: [{u'\u914d\u53d8\u540d\u79f0':... != [{u'\u914d\u53d8\u540d\u79f0':...
+
+First differing element 0:
+{u'\u914d\u53d8\u540d\u79f0': u'\u516c\u7528\u53d81', u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u5e76\u8054\u53d8\u538b\u5668\u6570\u91cf': u'', u'\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u94c1\u635f\u6bd4(%)': 0.0}
+{u'\u914d\u53d8\u540d\u79f0': u'\u516c\u7528\u53d83', u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u5e76\u8054\u53d8\u538b\u5668\u6570\u91cf': u'', u'\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u94c1\u635f\u6bd4(%)': 0.0}
+
+Diff is 1389 characters long. Set self.maxDiff to None to see it.
+2019-04-18 15:15:42,381 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagle620kv\DistributionlineFlowDayCalcProc.py", line 463, in test_A15_DistributionlineLightloadTranDay
+    raise e
+AssertionError: Lists differ: [{u'\u914d\u53d8\u540d\u79f0':... != [{u'\u914d\u53d8\u540d\u79f0':...
+
+First differing element 0:
+{u'\u914d\u53d8\u540d\u79f0': u'\u516c\u7528\u53d81', u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u5e76\u8054\u53d8\u538b\u5668\u6570\u91cf': u'', u'\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u94c1\u635f\u6bd4(%)': 0.0}
+{u'\u914d\u53d8\u540d\u79f0': u'\u516c\u7528\u53d83', u'\u7ebf\u8def\u540d\u79f0': u'\u6f6e\u6d41\u6cd5\u914d\u7ebf', u'\u5e76\u8054\u53d8\u538b\u5668\u6570\u91cf': u'', u'\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u94dc\u94c1\u635f\u6bd4(%)': 0.0}
+
+Diff is 1389 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.15" class="">
+    <td class="none"><div class="testcase">test_A16_DistributionlinePieSStDay: 配电线路线损率分段统计结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.15&#39;)">
+        pass</a>
+
+    <div id="div_pt5.15" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.15&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.15: 2019-04-18 15:16:07,068 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:16:07,068 INFO    : 登录成功！
+2019-04-18 15:16:29,736 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.16" class="">
+    <td class="none"><div class="testcase">test_A17_DistributionlinePieSComDay: 配电线路线损率分段单位追溯统计结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.16&#39;)">
+        pass</a>
+
+    <div id="div_pt5.16" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.16&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.16: 2019-04-18 15:16:54,217 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:16:54,217 INFO    : 登录成功！
+2019-04-18 15:17:32,019 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt5.17" class="">
+    <td class="none"><div class="testcase">test_A18_DistributionlinePieSSubDay: 配电线路线损率分段变电站追溯统计结果核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt5.17&#39;)">
+        pass</a>
+
+    <div id="div_pt5.17" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt5.17&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt5.17: 2019-04-18 15:17:56,450 INFO    : 登录用户名:lj 密码:000000返回结果:lj
+2019-04-18 15:17:56,450 INFO    : 登录成功！
+2019-04-18 15:18:52,223 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="passClass">
+    <td>eagle620kv.DistributionlineSquDaycalcPcs.DistributionlineSquDaycalcPcs: 配线运行数据录入以及结果核对</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c6&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt6.1" class="">
+    <td class="none"><div class="testcase">test_A1_DistributionlineSquMeasDay: 单线图日均方根电流法理论运行数据录入</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt6.1&#39;)">
+        pass</a>
+
+    <div id="div_pt6.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt6.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt6.1: 2019-04-18 15:19:18,765 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:19:18,765 INFO    : 登录成功！
+2019-04-18 15:20:57,415 INFO    : 录入数据成功
+2019-04-18 15:21:16,081 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:21:16,081 INFO    : 登录成功！
+2019-04-18 15:38:14,400 INFO    : 录入数据成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt6.2" class="">
+    <td class="none"><div class="testcase">test_A2_DistributionlineSquDaycalc: 6-20kv日均方根电流法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt6.2&#39;)">
+        pass</a>
+
+    <div id="div_pt6.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt6.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt6.2: 2019-04-18 15:38:41,094 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:38:41,094 INFO    : 登录成功！
+2019-04-18 15:39:43,855 INFO    : 计算成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt6.3" class="">
+    <td class="none"><div class="testcase">test_A3_DistributionlineEleQuadaycalcResult: 单线图日均方根电流法整体计算结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt6.3&#39;)">
+        pass</a>
+
+    <div id="div_pt6.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt6.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt6.3: 2019-04-18 15:40:10,440 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:40:10,440 INFO    : 登录成功！
+2019-04-18 15:40:35,719 INFO    : 返回的计算结果[{u'\u516c\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 1.0233211393290158, u'\u5b9e\u9645\u7ebf\u635f\u7387\uff08%\uff09': 100.0, u'\u9996\u7aef\u5e73\u5747\u7535\u6d41\uff08A\uff09': 3.348333333333333, u'\u7ebf\u8def\u540d\u79f0': u'\u914d\u7ebf\u5404\u79cd\u8ba1\u7b97\u65b9\u6cd5\u8ba1\u7b97\u7ed3\u679c\u9a8c\u8bc1', u'\u7535\u5bb9\u5668\u635f\u8017\uff08kWh\uff09': 0.0, u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 165.183321, u'\u8ba1\u7b97\u65b9\u6cd5': u'\u5747\u65b9\u6839\u7535\u6d41\u6cd5', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 30.238580001831053, u'\u53d8\u538b\u5668\u94c1\u635f\uff08kWh\uff09': 164.16, u'\u53d8\u538b\u5668\u94dc\u94c1\u6bd4\uff08%\uff09': 0.006233681404294687, u'k\u7cfb\u6570': 1.23, u'\u7ecf\u6d4e\u8d1f\u8f7d\u7387\uff08%\uff09': 0.0, u'\u65e0\u529f\u7535\u91cf\uff08kvarh\uff09': 28205.603181022256, u'\u552e\u7535\u91cf\uff08kWh\uff09': 891.0, u'\u53d8\u538b\u5668\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 0.767814334675961, u'\u6700\u4f73\u7ebf\u635f\u7387\uff08%\uff09': 30.200708723365207, u'\u7ecf\u6d4e\u8d1f\u8377\u7535\u6d41\uff08A\uff09': 11.370524525938293, u'\u5907\u6ce8': u'', u'\u4f9b\u7535\u65f6\u95f4\uff08h\uff09': 24.0, u'\u7406\u8bba\u7ebf\u635f\u7387\u4e0d\u542b\u4e13\u53d8\uff08%\uff09': 2.8272328192714697, u'\u5747\u65b9\u6839\u7535\u6d41\uff08A\uff09': 4.302408240354077, u'\u5bfc\u7ebf\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 16.86712006266273, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u6709\u529f\u7535\u91cf\uff08kWh\uff09': 6666.0, u'\u7535\u8868\u635f\u8017\uff08kWh\uff09': 0.8, u'\u7535\u538b\uff08kV\uff09': 10.0, u'\u53d8\u538b\u5668\u94dc\u635f\uff08kWh\uff09': 1.0233211393290158, u'\u7ebf\u635f\u7387\uff08%\uff09': 2.827232823282328, u'\u603b\u635f\u8017\uff08kWh\uff09': 188.46333973263614, u'\u516c\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 164.16, u'\u4e13\u7528\u53d8\u94dc\u635f\uff08kWh\uff09': 0.0, u'\u5355\u4f4d': u'lyl\u76f4\u7ba1', u'\u53d8\u538b\u5668\u6570\u91cf': 4.0, u'\u603b\u7b49\u6548\u963b\u6297\uff08\u03a9\uff09': 17.63493439733869, u'\u5bfc\u7ebf\u635f\u8017\uff08kWh\uff09': 22.480018593307097, u'\u4f9b\u7535\u534a\u5f84\uff08km\uff09': 30.238580001831053, u'\u4e13\u7528\u53d8\u94c1\u635f\uff08kWh\uff09': 0.0, u'\u529f\u7387\u56e0\u6570': 0.23}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt6.4" class="">
+    <td class="none"><div class="testcase">test_A4_DistAclinesegeSquDaycalcResult: 单线图日电量法导线损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt6.4&#39;)">
+        pass</a>
+
+    <div id="div_pt6.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt6.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt6.4: 2019-04-18 15:41:02,390 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:41:02,390 INFO    : 登录成功！
+2019-04-18 15:41:32,046 INFO    : 返回的计算结果[{u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 11.65298756041828, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 4430.0, u'\u7535\u6d41\uff08A\uff09': 4.302408240354077, u'\u635f\u8017\uff08kWh\uff09': 21.96160953499293, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': u'', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 25.351, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb51', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.92910427425465, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 10.0}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.016953794154243647, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 2430.0, u'\u7535\u6d41\uff08A\uff09': 2.3600117435802273, u'\u635f\u8017\uff08kWh\uff09': 0.03195168667448401, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': u'', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 0.122580002, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb52', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.928916235603046, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.92910427425465}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.0996424669872336, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1800.0, u'\u7535\u6d41\uff08A\uff09': 1.7481568470964646, u'\u635f\u8017\uff08kWh\uff09': 0.18778952107612987, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': u'', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 1.313, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb53', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.927424271196616, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.928916235603046}, {u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 0.1584753039966582, u'\u53d8\u538b\u5668\u5bb9\u91cf\uff08kVA\uff09': 1400.0, u'\u7535\u6d41\uff08A\uff09': 1.3596775477416947, u'\u635f\u8017\uff08kWh\uff09': 0.29866785056354983, u'\u4f9b\u7535\u91cf\uff08kWh\uff09': u'', u'\u5bfc\u7ebf\u957f\u5ea6\uff08km\uff09': 3.452, u'\u578b\u53f7': u'LGJ-50', u'\u540d\u79f0': u'\u914d\u7ebf\u6bb54', u'\u672b\u7aef\u7535\u538b\uff08kV\uff09': 9.924373426826897, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.927424271196616}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt6.5" class="">
+    <td class="none"><div class="testcase">test_A5_DistTransformerSquDaycalcResult: 单线图日电量法变压器损耗明细结果验证</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt6.5&#39;)">
+        pass</a>
+
+    <div id="div_pt6.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt6.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt6.5: 2019-04-18 15:41:58,928 INFO    : 登录用户名:lyltest 密码:000000返回结果:lyltest
+2019-04-18 15:41:58,928 INFO    : 登录成功！
+2019-04-18 15:42:29,538 INFO    : 返回的计算结果[{u'\u7535\u6d41\uff08A\uff09': 1.9423964967738496, u'\u94c1\u635f\uff08kWh\uff09': 47.04, u'\u552e\u7535\u91cf\uff08kWh\uff09': 3009.4808126410835, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 25.02028937261145, u'\u578b\u53f7': u'S11-2000', u'\u540d\u79f0': u'\u516c\u7528\u53d81', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 47.15407296239337, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 0.11407296239337521, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.92910427425465}, {u'\u7535\u6d41\uff08A\uff09': 0.6118548964837626, u'\u94c1\u635f\uff08kWh\uff09': 51.84, u'\u552e\u7535\u91cf\uff08kWh\uff09': 947.9864559819413, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 27.53982212067938, u'\u578b\u53f7': u'JB1300-73-630', u'\u540d\u79f0': u'\u516c\u7528\u53d82', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 51.90246852505966, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 0.06246852505965989, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.928916235603046}, {u'\u7535\u6d41\uff08A\uff09': 0.38847929935476994, u'\u94c1\u635f\uff08kWh\uff09': 22.080000000000002, u'\u552e\u7535\u91cf\uff08kWh\uff09': 601.8961625282167, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 11.739829099514857, u'\u578b\u53f7': u'BS8-400', u'\u540d\u79f0': u'\u516c\u7528\u53d83', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 22.125273999849565, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 0.04527399984956303, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.927424271196616}, {u'\u7535\u6d41\uff08A\uff09': 1.3596775477416947, u'\u94c1\u635f\uff08kWh\uff09': 43.2, u'\u552e\u7535\u91cf\uff08kWh\uff09': 2106.6365688487585, u'\u5360\u603b\u635f\u8017\u767e\u5206\u6bd4\uff08%\uff09': 23.34751454285446, u'\u578b\u53f7': u'DJ-1400', u'\u540d\u79f0': u'\u516c\u7528\u53d84', u'\u53d8\u538b\u5668\u635f\u8017\uff08kWh\uff09': 44.001505652026424, u'\u7c7b\u578b': u'\u516c\u53d8', u'\u94dc\u635f\uff08kWh\uff09': 0.8015056520264175, u'\u9996\u7aef\u7535\u538b\uff08kV\uff09': 9.924373426826897}]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="passClass">
+    <td>eagle620kv.DistributionlineVoluDayCalcProc.DistributionlineVoluDayCalcProc: 理论线损日容量法计算以及相关结果核对</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c7&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt7.1" class="">
+    <td class="none"><div class="testcase">test_A1_DistributionlineMeasDayEnter: 理论线损日数据录入，与其它配电线路日数据输入一样,输入2014-8-1日数据信息</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt7.1&#39;)">
+        pass</a>
+
+    <div id="div_pt7.1" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt7.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt7.1: 2019-04-18 15:42:54,305 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:42:54,305 INFO    : 登录成功！
+2019-04-18 15:44:33,151 INFO    : 录入数据成功
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt7.2" class="">
+    <td class="none"><div class="testcase">test_A2_DistributionlineVoluDayCalc: 配电网理论线损日容量法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt7.2&#39;)">
+        pass</a>
+
+    <div id="div_pt7.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt7.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt7.2: 2019-04-18 15:44:54,815 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:44:54,815 INFO    : 登录成功！
+2019-04-18 15:45:14,989 INFO    : 计算成功，请对结果进行核对
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt7.3" class="">
+    <td class="none"><div class="testcase">test_A3_DistributionlineVoluDayCalcResult: 配电线路日容量法计算结果导出并与预期结果进行核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt7.3&#39;)">
+        pass</a>
+
+    <div id="div_pt7.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt7.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt7.3: 2019-04-18 15:45:36,750 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:45:36,752 INFO    : 登录成功！
+2019-04-18 15:45:54,782 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt7.4" class="">
+    <td class="none"><div class="testcase">test_A4_DistributionlineVoluDayCalcTransLoss: 容量法日计算变压器损耗结果导出和核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt7.4&#39;)">
+        pass</a>
+
+    <div id="div_pt7.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt7.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt7.4: 2019-04-18 15:46:16,453 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:46:16,453 INFO    : 登录成功！
+2019-04-18 15:46:40,051 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt7.5" class="">
+    <td class="none"><div class="testcase">test_A5_DistributionlineVoluDayCalcLineLoss: 容量法日计算导线损耗结果导出和核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt7.5&#39;)">
+        pass</a>
+
+    <div id="div_pt7.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt7.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt7.5: 2019-04-18 15:47:02,145 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:47:02,147 INFO    : 登录成功！
+2019-04-18 15:47:23,740 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="passClass">
+    <td>eagle620kv.DistributionlineVoluMonthCalcProc.DistributionlineVoluMonthCalcProc: 理论线损月计算容量法计算以及相关结果核对</td>
+    <td>5</td>
+    <td>5</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail(&#39;c8&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="pt8.1" class="">
+    <td class="none"><div class="testcase">test_A1_DistributionlineMeasMonthEnter: 理论线损月数据录入，与其它配电线路月数据输入一样</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt8.1&#39;)">
+        pass</a>
+
+    <div id="div_pt8.1" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt8.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt8.1: 2019-04-18 15:47:48,378 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:47:48,378 INFO    : 登录成功！
+2019-04-18 15:49:07,651 INFO    : 未修改输入数据，请确认数据是否为正确的数据
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt8.2" class="">
+    <td class="none"><div class="testcase">test_A2_DistributionlineVoluMonthCalc: 配电网理论线损月容量法计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt8.2&#39;)">
+        pass</a>
+
+    <div id="div_pt8.2" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt8.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt8.2: 2019-04-18 15:49:29,658 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:49:29,658 INFO    : 登录成功！
+2019-04-18 15:49:48,598 INFO    : 计算成功，请对结果进行核对
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt8.3" class="">
+    <td class="none"><div class="testcase">test_A3_DistributionlineVoluMonthCalcResult: 配电线路月容量法计算结果导出并与预期结果进行核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt8.3&#39;)">
+        pass</a>
+
+    <div id="div_pt8.3" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt8.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt8.3: 2019-04-18 15:50:10,055 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:50:10,055 INFO    : 登录成功！
+2019-04-18 15:50:27,969 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt8.4" class="">
+    <td class="none"><div class="testcase">test_A4_DistributionlineVoluMonthCalcTransLoss: 容量法月计算变压器损耗结果导出和核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt8.4&#39;)">
+        pass</a>
+
+    <div id="div_pt8.4" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt8.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt8.4: 2019-04-18 15:50:49,805 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:50:49,805 INFO    : 登录成功！
+2019-04-18 15:51:10,298 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt8.5" class="">
+    <td class="none"><div class="testcase">test_A5_DistributionlineVoluMonthCalcLineLoss: 容量法月计算变压器损耗结果导出和核对</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt8.5&#39;)">
+        pass</a>
+
+    <div id="div_pt8.5" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt8.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt8.5: 2019-04-18 15:51:31,723 INFO    : 登录用户名:Autotest 密码:000000返回结果:Autotest
+2019-04-18 15:51:31,723 INFO    : 登录成功！
+2019-04-18 15:51:52,285 INFO    : 计算结果与预期结果匹配
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="errorClass">
+    <td>eagleWhole.NewtonMethodCalcPcs.NewtonMethodCalcPcs: 24点运行数据录入及核对。</td>
+    <td>33</td>
+    <td>26</td>
+    <td>5</td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail(&#39;c9&#39;,33)">Detail</a></td>
+</tr>
+
+<tr id="ft9.1" class="">
+    <td class="errorCase"><div class="testcase">test_A01_NewtonMethodDataEnter: 登录并录入运行数据</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.1&#39;)">
+        error</a>
+
+    <div id="div_ft9.1" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.1: 2019-04-18 15:52:13,859 INFO    : 登录用户名：wjtest 密码：000000 返回结果:wjtest
+2019-04-18 15:52:13,859 INFO    : 登录成功
+2019-04-18 15:56:06,793 INFO    : Message: element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 15:56:07,157 ERROR   : 数据无法保存！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 129, in test_A01_NewtonMethodDataEnter
+    raise e
+ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.2" class="">
+    <td class="none"><div class="testcase">test_A02_NewtonMethodCalc: 登录并计算</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.2&#39;)">
+        pass</a>
+
+    <div id="div_pt9.2" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.2: 2019-04-18 15:56:23,898 INFO    : 登录用户名：wjtest 密码：000000 返回结果:wjtest
+2019-04-18 15:56:23,898 INFO    : 登录成功
+2019-04-18 15:56:53,569 INFO    : 计算成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.3" class="">
+    <td class="none"><div class="testcase">test_A03_NewtonMethodWholelossHourCalcResult: 整点-输电网线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.3&#39;)">
+        pass</a>
+
+    <div id="div_pt9.3" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.3: 2019-04-18 15:57:13,153 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 15:57:13,153 INFO    : 登录成功！
+2019-04-18 15:57:43,102 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.4" class="">
+    <td class="none"><div class="testcase">test_A04_NewtonMethodWholelossMonCalcResult: 月-输电网线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.4&#39;)">
+        pass</a>
+
+    <div id="div_pt9.4" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.4: 2019-04-18 15:58:02,894 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 15:58:02,894 INFO    : 登录成功！
+2019-04-18 15:58:28,206 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.5" class="">
+    <td class="none"><div class="testcase">test_A05_NewtonMethodWholelossDayCalcResult: 日-输电网线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.5&#39;)">
+        pass</a>
+
+    <div id="div_pt9.5" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.5: 2019-04-18 15:58:47,857 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 15:58:47,857 INFO    : 登录成功！
+2019-04-18 15:59:14,492 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.6" class="">
+    <td class="none"><div class="testcase">test_A06_NewtonMethodWholelossMonVoltCalcResult: 月-输电网分压线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.6&#39;)">
+        pass</a>
+
+    <div id="div_pt9.6" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.6&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.6: 2019-04-18 15:59:34,453 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 15:59:34,453 INFO    : 登录成功！
+2019-04-18 15:59:59,335 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.7" class="">
+    <td class="none"><div class="testcase">test_A07_NewtonMethodWholelossDayVoltCalcResult: 日-输电网分压线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.7&#39;)">
+        pass</a>
+
+    <div id="div_pt9.7" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.7&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.7: 2019-04-18 16:00:18,813 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:00:18,813 INFO    : 登录成功！
+2019-04-18 16:00:38,371 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.8" class="">
+    <td class="none"><div class="testcase">test_A08_NewtonMethodWholelossHourVoltCalcResult: 整点-输电网分压线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.8&#39;)">
+        pass</a>
+
+    <div id="div_pt9.8" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.8&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.8: 2019-04-18 16:00:57,869 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:00:57,869 INFO    : 登录成功！
+2019-04-18 16:01:27,796 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.9" class="">
+    <td class="failCase"><div class="testcase">test_A09_NewtonMethodSubstationMonCalcResult: 月-变电站损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.9&#39;)">
+        fail</a>
+
+    <div id="div_ft9.9" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.9&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.9: 2019-04-18 16:01:47,381 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:01:47,381 INFO    : 登录成功！
+2019-04-18 16:02:12,470 ERROR   : Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.71145399613184, u'\u7ebf\u635f\u7387(%)': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.7114539961318, u'\u7ebf\u635f\u7387(%)': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+
+Diff is 1096 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:02:12,792 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 313, in test_A09_NewtonMethodSubstationMonCalcResult
+    self.assertEqual(self.Excel_Data,self.ReturnMsg)
+AssertionError: Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.71145399613184, u'\u7ebf\u635f\u7387(%)': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.7114539961318, u'\u7ebf\u635f\u7387(%)': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+
+Diff is 1096 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.10" class="">
+    <td class="failCase"><div class="testcase">test_A10_NewtonMethodSubstationDayCalcResult: 日-变电站损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.10&#39;)">
+        fail</a>
+
+    <div id="div_ft9.10" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.10&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.10: 2019-04-18 16:02:32,434 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:02:32,434 INFO    : 登录成功！
+2019-04-18 16:02:58,165 ERROR   : Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.71145399613184, u'\u7ebf\u635f\u7387\uff08%\uff09': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.7114539961318, u'\u7ebf\u635f\u7387\uff08%\uff09': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+
+Diff is 1116 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:02:58,471 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 343, in test_A10_NewtonMethodSubstationDayCalcResult
+    raise e
+AssertionError: Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.71145399613184, u'\u7ebf\u635f\u7387\uff08%\uff09': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u6709\u529f\u4f9b\u7535\u91cf\uff08MWh\uff09': 185.7114539961318, u'\u7ebf\u635f\u7387\uff08%\uff09': 60.37091713255338, u'\u7535\u538b\u7b49\u7ea7(kV)': 330.0, u'\u5408\u8ba1\uff08MWh\uff09': 112.1157084544873, u'\u94dc\u635f\uff08MWh\uff09': 13.80156706283251, u'\u5176\u4ed6\u635f\u8017\uff08MWh\uff09': 98.194, u'\u94c1\u635f\uff08MWh\uff09': 0.12014549976828912}
+
+Diff is 1116 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.11" class="">
+    <td class="none"><div class="testcase">test_A11_NewtonMethodSubstationHourCalcResult: 整点-变电站损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.11&#39;)">
+        pass</a>
+
+    <div id="div_pt9.11" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.11&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.11: 2019-04-18 16:03:18,076 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:03:18,076 INFO    : 登录成功！
+2019-04-18 16:03:48,716 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.12" class="">
+    <td class="none"><div class="testcase">test_A12_NewtonMethodTransformerMonCalcResult: 月-变压器损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.12&#39;)">
+        pass</a>
+
+    <div id="div_pt9.12" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.12&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.12: 2019-04-18 16:04:08,276 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:04:08,276 INFO    : 登录成功！
+2019-04-18 16:04:34,223 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.13" class="">
+    <td class="errorCase"><div class="testcase">test_A13_NewtonMethodTransformerDayCalcResult: 日-变压器损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.13&#39;)">
+        error</a>
+
+    <div id="div_ft9.13" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.13&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.13: 2019-04-18 16:04:53,881 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:04:53,881 INFO    : 登录成功！
+2019-04-18 16:04:54,967 ERROR   : Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 16:04:55,265 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 415, in test_A13_NewtonMethodTransformerDayCalcResult
+    raise e
+NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img"}
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.14" class="">
+    <td class="none"><div class="testcase">test_A14_NewtonMethodTransformerHourCalcResult: 整点-变压器损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.14&#39;)">
+        pass</a>
+
+    <div id="div_pt9.14" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.14&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.14: 2019-04-18 16:05:16,489 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:05:16,489 INFO    : 登录成功！
+2019-04-18 16:05:52,986 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.15" class="">
+    <td class="none"><div class="testcase">test_A15_NewtonMethodAclineMonCalcResult: 月-导线损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.15&#39;)">
+        pass</a>
+
+    <div id="div_pt9.15" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.15&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.15: 2019-04-18 16:06:16,325 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:06:16,325 INFO    : 登录成功！
+2019-04-18 16:06:43,690 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.16" class="">
+    <td class="none"><div class="testcase">test_A16_NewtonMethodAclineDayCalcResult: 日-导线损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.16&#39;)">
+        pass</a>
+
+    <div id="div_pt9.16" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.16&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.16: 2019-04-18 16:07:03,269 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:07:03,269 INFO    : 登录成功！
+2019-04-18 16:07:29,131 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.17" class="">
+    <td class="none"><div class="testcase">test_A17_NewtonMethodAclineHourCalcResult: 整点-导线损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.17&#39;)">
+        pass</a>
+
+    <div id="div_pt9.17" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.17&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.17: 2019-04-18 16:07:48,710 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:07:48,710 INFO    : 登录成功！
+2019-04-18 16:08:18,844 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.18" class="">
+    <td class="failCase"><div class="testcase">test_A18_NewtonMethodOtherLossMonResult: 月-其他损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.18&#39;)">
+        fail</a>
+
+    <div id="div_ft9.18" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.18&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.18: 2019-04-18 16:08:38,469 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:08:38,469 INFO    : 登录成功！
+2019-04-18 16:09:03,252 ERROR   : Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u635f\u8017(MWh)': 2219.310743801652, u'\u8bbe\u5907\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u8bbe\u5907\u7c7b\u578b\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u5668'}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u635f\u8017(MWh)': 98.16072107289504, u'\u8bbe\u5907\u540d\u79f0': u'\u7535\u6297\u5668(\u5e76\u8054)2', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u8bbe\u5907\u7c7b\u578b\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u5668'}
+
+Diff is 1862 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:09:03,552 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 535, in test_A18_NewtonMethodOtherLossMonResult
+    raise e
+AssertionError: Lists differ: [{u'\u53d8\u7535\u7ad9\u540d\u... != [{u'\u53d8\u7535\u7ad9\u540d\u...
+
+First differing element 0:
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u635f\u8017(MWh)': 2219.310743801652, u'\u8bbe\u5907\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u8bbe\u5907\u7c7b\u578b\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u5668'}
+{u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u635f\u8017(MWh)': 98.16072107289504, u'\u8bbe\u5907\u540d\u79f0': u'\u7535\u6297\u5668(\u5e76\u8054)2', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u8bbe\u5907\u7c7b\u578b\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u5668'}
+
+Diff is 1862 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.19" class="">
+    <td class="failCase"><div class="testcase">test_A19_NewtonMethodOtherLossDayResult: 日-其他损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.19&#39;)">
+        fail</a>
+
+    <div id="div_ft9.19" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.19&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.19: 2019-04-18 16:09:23,072 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:09:23,072 INFO    : 登录成功！
+2019-04-18 16:09:48,944 ERROR   : Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 2219.310743801652}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u540d\u79f0': u'\u7535\u6297\u5668(\u5e76\u8054)2', u'\u635f\u8017(MWh)': 98.16072107289504}
+
+Diff is 1613 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:09:49,253 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 559, in test_A19_NewtonMethodOtherLossDayResult
+    raise e
+AssertionError: Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 2219.310743801652}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u540d\u79f0': u'\u7535\u6297\u5668(\u5e76\u8054)2', u'\u635f\u8017(MWh)': 98.16072107289504}
+
+Diff is 1613 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft9.20" class="">
+    <td class="failCase"><div class="testcase">test_A20_NewtonMethodOtherLossHourResult: 整点-其他损耗表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft9.20&#39;)">
+        fail</a>
+
+    <div id="div_ft9.20" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft9.20&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft9.20: 2019-04-18 16:10:08,769 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:10:08,769 INFO    : 登录成功！
+2019-04-18 16:10:39,282 ERROR   : Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 92.4712809917355}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u5bb9\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u540d\u79f0': u'\u7535\u5bb9\u56681', u'\u635f\u8017(MWh)': 0.00139065627433946}
+
+Diff is 1552 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:10:39,584 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\NewtonMethodCalcPcs.py", line 583, in test_A20_NewtonMethodOtherLossHourResult
+    raise e
+AssertionError: Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 92.4712809917355}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u5bb9\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e3b\u7f51\u8ba1\u7b97\u53d8\u7535\u7ad91', u'\u7535\u538b\u7b49\u7ea7(kV)': 220.0, u'\u540d\u79f0': u'\u7535\u5bb9\u56681', u'\u635f\u8017(MWh)': 0.00139065627433946}
+
+Diff is 1552 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.21" class="">
+    <td class="none"><div class="testcase">test_A21_NewtonMethodLosspartHourCalcResult: 整点-分片线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.21&#39;)">
+        pass</a>
+
+    <div id="div_pt9.21" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.21&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.21: 2019-04-18 16:10:59,088 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:10:59,088 INFO    : 登录成功！
+2019-04-18 16:11:29,234 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.22" class="">
+    <td class="none"><div class="testcase">test_A22_NewtonMethodLosspartVoltHourCalcResult: 整点-分片分压线损表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.22&#39;)">
+        pass</a>
+
+    <div id="div_pt9.22" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.22&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.22: 2019-04-18 16:11:48,838 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:11:48,838 INFO    : 登录成功！
+2019-04-18 16:12:19,309 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.23" class="">
+    <td class="none"><div class="testcase">test_A23_NewtonMethodNodeVoltPowerHourCalcResult: 整点-节点电压功率表</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.23&#39;)">
+        pass</a>
+
+    <div id="div_pt9.23" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.23&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.23: 2019-04-18 16:12:40,292 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:12:40,292 INFO    : 登录成功！
+2019-04-18 16:13:10,605 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.24" class="">
+    <td class="none"><div class="testcase">test_A24_NewtonMethodWholeLossAnalysisMonResult: 月-输电网综合分析</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.24&#39;)">
+        pass</a>
+
+    <div id="div_pt9.24" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.24&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.24: 2019-04-18 16:13:30,137 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:13:30,137 INFO    : 登录成功！
+2019-04-18 16:14:00,301 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.25" class="">
+    <td class="none"><div class="testcase">test_A25_NewtonMethodWholeLossAnalysisMonAcline: 月-输电网综合分析-导线追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.25&#39;)">
+        pass</a>
+
+    <div id="div_pt9.25" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.25&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.25: 2019-04-18 16:14:19,890 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:14:19,890 INFO    : 登录成功！
+2019-04-18 16:14:51,109 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.26" class="">
+    <td class="none"><div class="testcase">test_A26_NewtonMethodWholeLossAnalysisMonTrans: 月-输电网综合分析-变压器追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.26&#39;)">
+        pass</a>
+
+    <div id="div_pt9.26" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.26&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.26: 2019-04-18 16:15:10,828 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:15:10,828 INFO    : 登录成功！
+2019-04-18 16:15:42,625 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.27" class="">
+    <td class="none"><div class="testcase">test_A27_NewtonMethodWholeLossAnalysisDayResult: 日-输电网综合分析</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.27&#39;)">
+        pass</a>
+
+    <div id="div_pt9.27" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.27&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.27: 2019-04-18 16:16:02,266 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:16:02,266 INFO    : 登录成功！
+2019-04-18 16:16:27,352 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.28" class="">
+    <td class="none"><div class="testcase">test_A28_NewtonMethodWholeLossAnalysisDayAcline: 日-输电网综合分析-导线追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.28&#39;)">
+        pass</a>
+
+    <div id="div_pt9.28" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.28&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.28: 2019-04-18 16:16:47,038 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:16:47,038 INFO    : 登录成功！
+2019-04-18 16:17:17,266 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.29" class="">
+    <td class="none"><div class="testcase">test_A29_NewtonMethodWholeLossAnalysisDayTrans: 日-输电网综合分析-变压器追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.29&#39;)">
+        pass</a>
+
+    <div id="div_pt9.29" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.29&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.29: 2019-04-18 16:17:36,792 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:17:36,792 INFO    : 登录成功！
+2019-04-18 16:18:07,085 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.30" class="">
+    <td class="none"><div class="testcase">test_A30_NewtonMethodTransAnalysisMonResult: 月-变压器经济运行分析</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.30&#39;)">
+        pass</a>
+
+    <div id="div_pt9.30" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.30&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.30: 2019-04-18 16:18:26,855 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:18:26,855 INFO    : 登录成功！
+2019-04-18 16:18:57,519 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.31" class="">
+    <td class="none"><div class="testcase">test_A31_NewtonMethodTransAnalysisMonRetrospect: 月-变压器经济运行分析-重载变追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.31&#39;)">
+        pass</a>
+
+    <div id="div_pt9.31" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.31&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.31: 2019-04-18 16:19:17,203 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:19:17,203 INFO    : 登录成功！
+2019-04-18 16:19:52,812 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.32" class="">
+    <td class="none"><div class="testcase">test_A32_NewtonMethodTransAnalysisDayResult: 日-变压器经济运行分析</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.32&#39;)">
+        pass</a>
+
+    <div id="div_pt9.32" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.32&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.32: 2019-04-18 16:20:12,990 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:20:12,990 INFO    : 登录成功！
+2019-04-18 16:20:38,361 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt9.33" class="">
+    <td class="none"><div class="testcase">test_A33_NewtonMethodTransAnalysisDayRetrospect: 日-变压器经济运行分析-重载变追溯</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt9.33&#39;)">
+        pass</a>
+
+    <div id="div_pt9.33" class="popup_window">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt9.33&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt9.33: 2019-04-18 16:20:58,446 INFO    : 登录用户名:wjtest 密码:000000返回结果:wjtest
+2019-04-18 16:20:58,446 INFO    : 登录成功！
+2019-04-18 16:21:28,578 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class="errorClass">
+    <td>eagleWhole.WholelossNiuhourcalcPcs.WholelossNiuhourcalcPcs: 24点运行数据录入及核对。</td>
+    <td>5</td>
+    <td>3</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail(&#39;c10&#39;,5)">Detail</a></td>
+</tr>
+
+<tr id="ft10.1" class="">
+    <td class="errorCase"><div class="testcase">test_A1_WholelossMeasHourEnter</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft10.1&#39;)">
+        error</a>
+
+    <div id="div_ft10.1" class="popup_window" style="display: block;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft10.1&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft10.1: 2019-04-18 16:21:44,977 INFO    : 登录用户名：lj 密码：000000 返回结果:lj
+2019-04-18 16:21:44,977 INFO    : 登录成功
+['0.0694', '0.0621', '0.0621', '0.0658', '0.0585', '0.084', '0.106', '0.676', '0.7454', '1.0634', '0.6322', '0.1315', '0.095', '0.6395', '0.5372', '0.5372', '0.5956', '0.5152', '0.1206', '0.2521', '0.2631', '0.1754', '0.0731', '0.0658', '0.1023', '0.106', '0.106', '0.1096', '0.095', '0.1206', '0.1206', '0.983', '1.1145', '1.1035', '0.9757', '0.19', '0.1571', '1.0487', '0.9208', '1.0305', '0.9976', '0.9135', '0.1937', '0.4421', '0.4348', '0.3143', '0.0987', '0.1023', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '111.5', '0.43', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '0.65', '0.36', '0.58', '100']
+2019-04-18 16:31:41,446 INFO    : Message: element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+2019-04-18 16:31:42,056 ERROR   : 数据无法保存！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\WholelossNiuhourcalcPcs.py", line 73, in test_A1_WholelossMeasHourEnter
+    raise e
+ElementNotVisibleException: Message: element not interactable
+  (Session info: chrome=71.0.3578.98)
+  (Driver info: chromedriver=2.43.600210 (68dcf5eebde37173d4027fa8635e332711d2874a),platform=Windows NT 10.0.17134 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt10.2" class="">
+    <td class="none"><div class="testcase">test_A2_WholelossNiuhourcalc</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt10.2&#39;)">
+        pass</a>
+
+    <div id="div_pt10.2" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt10.2&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt10.2: 2019-04-18 16:32:03,711 INFO    : 登录用户名：lj 密码：000000 返回结果:lj
+2019-04-18 16:32:03,711 INFO    : 登录成功
+2019-04-18 16:32:33,713 INFO    : 计算成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="ft10.3" class="">
+    <td class="failCase"><div class="testcase">test_A3_TranotherlosshourcalcResult</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_ft10.3&#39;)">
+        fail</a>
+
+    <div id="div_ft10.3" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_ft10.3&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+ft10.3: 2019-04-18 16:32:57,569 INFO    : 登录用户名：lj 密码：000000 返回结果：lj
+2019-04-18 16:32:57,569 INFO    : 登录成功！
+2019-04-18 16:33:44,533 INFO    : Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 92.4712809917355}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u5bb9\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u7535\u5bb9\u56681164', u'\u635f\u8017(MWh)': 0.0}
+
+Diff is 975 characters long. Set self.maxDiff to None to see it.
+2019-04-18 16:33:44,838 ERROR   : 数据校验错误，请检查！
+Traceback (most recent call last):
+  File "D:\svn\eagle2\05Test\Auto\Project\EagleProjecttest\case\eagleWhole\WholelossNiuhourcalcPcs.py", line 121, in test_A3_TranotherlosshourcalcResult
+    raise e
+AssertionError: Lists differ: [{u'\u7c7b\u578b': u'\u5e76\u8... != [{u'\u7c7b\u578b': u'\u5e76\u8...
+
+First differing element 0:
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u6297\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u5e76\u8054\u7535\u6297\u56681153', u'\u635f\u8017(MWh)': 92.4712809917355}
+{u'\u7c7b\u578b': u'\u5e76\u8054\u7535\u5bb9\u5668', u'\u53d8\u7535\u7ad9\u540d\u79f0': u'\u4e1c\u6cb3110kV\u53d8\u7535\u7ad9', u'\u7535\u538b\u7b49\u7ea7(kV)': 110.0, u'\u540d\u79f0': u'\u7535\u5bb9\u56681164', u'\u635f\u8017(MWh)': 0.0}
+
+Diff is 975 characters long. Set self.maxDiff to None to see it.
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt10.4" class="">
+    <td class="none"><div class="testcase">test_A4_TranotherlossdayCalcResult</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt10.4&#39;)">
+        pass</a>
+
+    <div id="div_pt10.4" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt10.4&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt10.4: 2019-04-18 16:34:07,403 INFO    : 登录用户名：lj 密码：000000 返回结果：lj
+2019-04-18 16:34:07,403 INFO    : 登录成功！
+2019-04-18 16:34:37,882 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="pt10.5" class="">
+    <td class="none"><div class="testcase">test_A5_TranotherlossmonCalcResult</div></td>
+    <td colspan="5" align="center">
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus="this.blur();" href="javascript:showTestDetail(&#39;div_pt10.5&#39;)">
+        pass</a>
+
+    <div id="div_pt10.5" class="popup_window" style="display: none;">
+        <div style="text-align: right; color:red;cursor:pointer">
+        <a onfocus="this.blur();" onclick="document.getElementById(&#39;div_pt10.5&#39;).style.display = &#39;none&#39; ">
+           [x]</a>
+        </div>
+        <pre>        
+pt10.5: 2019-04-18 16:34:59,667 INFO    : 登录用户名：lj 密码：000000 返回结果：lj
+2019-04-18 16:34:59,667 INFO    : 登录成功！
+2019-04-18 16:35:30,250 INFO    : 数据校验成功！
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id="total_row">
+    <td>Total</td>
+    <td>89</td>
+    <td>76</td>
+    <td>8</td>
+    <td>5</td>
+    <td>&nbsp;</td>
+</tr>
+</tbody></table>
+
+<div id="ending">&nbsp;</div>
+
+
+
+</body></html>

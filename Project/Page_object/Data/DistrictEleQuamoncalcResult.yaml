@@ -1,0 +1,9 @@
+﻿#! -*- encoding:utf-8 -*-
+DistrictEleQuamoncalcResult:
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd-textEl'
+
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  DistributionLineMonthlyReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  LinelossmeterofDistrict_Xpath: '//div[3]/div[3]/div/table/tbody/tr[8]/td/div'
+  DistrictCalcResult_frame: 'iframe_4028801b3ef3c580013ef4715d2a22b3'
+  export_id: '297efe1739fac8ae0139fb57bdee0000-btnInnerEl'

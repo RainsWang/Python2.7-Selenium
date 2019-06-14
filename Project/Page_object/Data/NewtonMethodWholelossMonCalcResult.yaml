@@ -1,0 +1,16 @@
+NewtonMethodWholelossMonCalcResult:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #月报表xpath
+  MonCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[5]/td/div/img[2]'
+  #输电网线损表xpath
+  WholelossCalcResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div'
+  #报表iframe的ID
+  WholelossCalcResultIframe_ID: 'iframe_4028801b3ec1fef3013ec63354cb1aae'
+
+  #查询按钮ID
+  Query_ID: '4028801b3eac6717013eacabe1f001bc-btnInnerEl'
+  #导出按钮ID
+  Export_ID: '4028801b3eac6717013eacabe1ed01b1-btnInnerEl'

@@ -1,0 +1,16 @@
+NewtonMethodAclineDayCalcResult:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表xpath
+  DayCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #变电站损耗表xpath
+  AclineLossResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[11]/td/div'
+  #报表iframe的ID
+  AclineLossResultIframe_ID: 'iframe_4028801b3ea7d744013eac38b9b455dd'
+
+  #查询按钮ID
+  Query_ID: '4028801b3eab2d1e013eab36035b003d-btnInnerEl'
+  #导出按钮ID
+  Export_ID: '4028801b3eab2d1e013eab3603580032-btnInnerEl'

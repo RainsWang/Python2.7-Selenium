@@ -1,0 +1,18 @@
+#! -*- encoding:utf-8 -*-
+DistAclinesegeFlowDayCalcResult:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header-targetEl'
+  #配电网计算结果查询
+  TheoreticalLineLosscalresult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #日报表
+  DistributionLineDayReport_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[7]/td/div/img[2]'
+  #配电线路线损表
+  DistributionlinedaycalcResult_Xpath: "//div/div/div[3]/div[3]/div/table/tbody/tr[8]/td/div/img[4]"
+  #切换到配电线路线损表的frame中
+  DistributionlinedaycalcResult_frame: "iframe_297efe173af22531013af33990d80000"
+  #点击损耗值
+  DistAclineLoss_Xpath: '//div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[9]/div/a/div/span'
+  #切换到配电线路导线损耗报表（24点）frame中
+  DistAclineLossdaycalcResult_frame: "iframe_4028801b4ede357d014ee348c5ca006b"
+  #点击导出
+  Export_ID: 'button-1056-btnIconEl'

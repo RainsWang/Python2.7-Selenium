@@ -1,0 +1,13 @@
+NewtonMethodWholelossDayVoltCalcResult:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表xpath
+  DayCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #输电网分压线损表xpath
+  WholelossDayVoltCalcResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[8]/td/div'
+  #报表iframe的ID
+  WholelossDayVoltCalcResultIframe_ID: 'iframe_4028801b3eac673c013eb0848a5f5ecc'
+  #导出按钮ID
+  Export_ID: '4028801b3ea7e9f2013eab04ffb3010d-btnInnerEl'

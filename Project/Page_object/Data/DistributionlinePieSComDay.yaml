@@ -1,0 +1,22 @@
+#! -*- encoding:utf-8 -*-
+DistributionlinePieSComDay:
+  #线损分析ID
+  LineLossAnalysis_ID: 'Llamenu-panel_header_hd-textEl'
+  #配电网计算结果分析
+  TheoreticalLineLosscalresultAnalysis_Xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日分析
+  DistributionLineDayAnalysis_Xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #配电线路线损率分段统计
+  DistributionlineLossRateSegStatistics_Xpath: "//div/div/div[6]/div[3]/div/table/tbody/tr[9]/td/div"
+  #切换到配电线路线损率分段统计的frame中
+  DistributionlineLossRateSegStatistics_frame: "iframe_4028801b404d7a9401404d7dd2530154"
+  #切换到配电线路线损率分段统计查询结果的frame中
+  DistributionlineLossRateSegStatisticsResult_frame: "viewframe"
+  #点击单位追溯
+  CompanyRetrospect_css: "div#_z_69-real>a"
+  #切换到配电网线损率分段统计追溯报表（分单位日）frame中
+  CompanyRetrospect_frame: "iframe_4028801b4033ffd5014037f37eff007a"
+  #点击导出
+  Export_ID: "4028801b4033ffd5014037f37f0e007e-btnInnerEl"
+
+

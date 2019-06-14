@@ -1,0 +1,17 @@
+NewtonMethodTransAnalysisDayResult:
+  #线损分析ID
+  LineLossAnalysis_ID: 'tool-1071-toolEl'
+  #输电网结果分析xpath
+  WholeLossResultAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[3]/td/div/img'
+  #日分析xpath
+  MonAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[5]/td/div/img[2]'
+  #变压器经济运行分析xpath
+  TransAnalysis_xpath: '//div/div/div/div[6]/div[3]/div/table/tbody/tr[7]/td/div'
+
+  #报表iframe的ID
+  TransAnalysisIframe_ID: 'iframe_4028801b3eee09dc013eeecb0235055b'
+
+  #查询按钮ID
+  Query_ID: '4028801b3ee3d56b013ee41140f000c6-btnInnerEl'
+  #导出按钮ID
+  Export_ID: '4028801b3ee3d56b013ee41140ee00b9-btnInnerEl'

@@ -1,0 +1,24 @@
+#! -*- encoding:utf-8 -*-
+DistributionlineEleQuamoncalcResult:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd-textEl'
+  #配电网计算结果查询
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #月报表
+  DistributionLineMonthlyReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #配电线路线损表
+  Linelossmeterofdistributionline_Xpath: '//div[3]/div[3]/div/table/tbody/tr[7]/td/div/img[4]'
+  #切换到frame
+  DistributionLineCalcResult_frame: 'iframe_297efe173ab9e771013aba8af15d000a'
+  #导出按钮
+  Daochu_id: 'button-1083-btnIconEl'
+  #获取相关的信息，title和内容信息以前获取，参数变化从1082到1108，range(1082,1109),通过滚动滚动条获取相关信息,EndNum为结果值+1
+  BeginNum: 1086
+  EndNum: 1124
+  #Targetid  'gridcolumn-'+ str(i) +'-textEl'
+  #TargetClass = 'x-grid-cell-gridcolumn-'+ str(i)
+  #title的ID，分为前后两部分，中间有数字参数
+  TargetResult_id_Before: 'gridcolumn-'
+  TargetResult_id_After: '-textEl'
+  #页面元素的class,结尾有一组数字，定位到哪一个元素
+  TargetResult_Class_Before: 'x-grid-cell-gridcolumn-'

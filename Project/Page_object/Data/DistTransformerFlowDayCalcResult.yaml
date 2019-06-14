@@ -1,0 +1,18 @@
+#! -*- encoding:utf-8 -*-
+DistTransformerFlowDayCalcResult:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header-targetEl'
+  #配电网计算结果查询
+  TheoreticalLineLosscalresult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #日报表
+  DistributionLineDayReport_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[7]/td/div/img[2]'
+  #配电线路线损表
+  DistributionlinedaycalcResult_Xpath: "//div/div/div[3]/div[3]/div/table/tbody/tr[8]/td/div/img[4]"
+  #切换到配电线路线损表的frame中
+  DistributionlinedaycalcResult_frame: "iframe_297efe173af22531013af33990d80000"
+  #点击变压器损耗值
+  DistTransformerLoss_Xpath: '//div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[10]/div/a/div'
+  #切换到配电变压器损耗报表（24点）的frame中
+  DistTransformerLossdaycalcResult_frame: "iframe_4028801b4eeda85a014ef124b2ba0002"
+  #点击导出
+  Export_ID: 'button-1056-btnIconEl'

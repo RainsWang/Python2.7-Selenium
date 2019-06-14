@@ -1,0 +1,23 @@
+DistrictmonAnalyzeResult:
+  #线损分析
+  LinelossAnalysis_ID: "tool-1071-toolEl"
+  #配电网计算结果分析
+  DistributionCalcResultAnaly_Xpath: "//div[6]/div[3]/div/table/tbody/tr[4]/td/div/img"
+  #月分析
+  DistributionMonthlyAnaly_Xpath: "//div[6]/div[3]/div/table/tbody/tr[5]/td/div/img[2]"
+  #低压台区综合分析
+  DistrictComprehensiveAnaly_Xpath: "//div[6]/div[3]/div/table/tbody/tr[7]/td/div/img[4]"
+  #切换到查询条件和查询结果所在的iframe
+  DistrictResult_frame: "iframe_4028801b3ed0b7c4013ed43cb51b7c99"
+  #点击日期下拉框
+  DateDropdownBox_Xpath: "//div[2]/div/div/div[2]/div/div/table/tbody/tr/td[2]/table/tbody/tr/td[2]/div"
+  #点击2015年
+  Year_Xpath: "//div[6]/div/div[2]/div[3]/a"
+  #点击8月
+  Month_Xpath: "//div[6]/div/div/div[4]/a"
+  #点击确定
+  Confirm_Xpath: "//div[6]/div[2]/div/em/button/span"
+  #点击查询
+  Query_Xpath: "//div[2]/div/div/div/div[4]/em/button/span"
+  #点击导出
+  Export_Xpath: "//div[2]/div/div/div/div[3]/em/button/span"

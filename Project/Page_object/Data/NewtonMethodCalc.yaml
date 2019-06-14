@@ -1,0 +1,14 @@
+#! -*- encoding:utf-8 -*-
+NewtonMethodCalc:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #理论线损手工计算绝对路径
+  LineLossManualCalc: '//div/div/div/div/div[3]/div[3]/div/table/tbody/tr[2]/td/div'
+  #计算窗口iframe的ID
+  CalcWindowIframe_ID: 'iframe_13000110'
+  #选择单位绝对路径
+  Company_Xpath: '//div[2]/div/div/div/div[2]/div/div[2]/div/table/tbody/tr[2]/td/div/input'
+  #计算按钮CSS路径
+  CalcButton_CSS: '#calc_start_button'
+  #计算完成提示信息ID
+  CalcCompletion_ID: 'messagebox-1001-displayfield-inputEl'

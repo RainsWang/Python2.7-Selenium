@@ -1,0 +1,29 @@
+NewtonMethodTransAnalysisMonRetrospect:
+  #线损分析ID
+  LineLossAnalysis_ID: 'tool-1071-toolEl'
+  #输电网结果分析xpath
+  WholeLossResultAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[3]/td/div/img'
+  #月分析xpath
+  MonAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[4]/td/div/img[2]'
+  #变压器经济运行分析xpath
+  TransAnalysis_xpath: '//div/div/div/div[6]/div[3]/div/table/tbody/tr[6]/td/div'
+
+  #报表iframe的ID
+  TransAnalysisIframe_ID: 'iframe_4028801b3ee4dfcc013ee517c0490003'
+  #激活月份选择框
+  Month_ID: 'ext-gen1072'
+  #选择2015
+  Year_xpath: '//div[6]/div/div[2]/div[3]/a'
+  #选择八月
+  Month_xpath: '//div[6]/div/div/div[4]/a'
+  #确定按钮
+  ConfirmButton_ID: 'button-1165-btnInnerEl'
+  #查询按钮ID
+  Query_ID: '4028801b3ee3d56b013ee40fda610084-btnInnerEl'
+  #重载变追溯链接
+  TransRetrospect_xpath: '//div[4]/div/table/tbody/tr[2]/td[6]/div/a/div'
+  #重载变追溯Iframe
+  TransRetrospect_Iframe: 'iframe_4028801b3ee9bb99013eea1c48640115'
+  #导出按钮ID
+  Export_ID: '4028801b3ee9bb99013eea1c48640115-btnInnerEl'
+

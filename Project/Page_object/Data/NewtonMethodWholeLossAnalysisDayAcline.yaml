@@ -1,0 +1,21 @@
+NewtonMethodWholeLossAnalysisDayAcline:
+  #线损分析ID
+  LineLossAnalysis_ID: 'tool-1071-toolEl'
+  #输电网结果分析xpath
+  WholeLossResultAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[3]/td/div/img'
+  #日分析xpath
+  MonAnalysis_xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[5]/td/div/img[2]'
+  #输电网综合分析xpath
+  WholeLossAnalysis_xpath: '//div/div/div/div[6]/div[3]/div/table/tbody/tr[6]/td/div'
+
+  #报表iframe的ID
+  WholelossAnalysisIframe_ID: 'iframe_4028801b3ecb9ac9013ed06842e700b3'
+
+  #查询按钮ID
+  Query_ID: '4028801b3ecfd201013ed038a26d0080-btnInnerEl'
+  #导线追溯链接
+  Acline_xpath: '//div[4]/div/table/tbody/tr[2]/td[8]/div/a/div/span'
+  #Iframe_ID
+  AclineIframe_ID: 'iframe_4028801b3ec1febd013ec62b437f0527'
+  #导出按钮ID
+  Export_ID: '4028801b3ec1febd013ec62b437f0527-btnInnerEl'

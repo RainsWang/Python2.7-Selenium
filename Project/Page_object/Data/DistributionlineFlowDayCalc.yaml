@@ -1,0 +1,20 @@
+#! -*- encoding:utf-8 -*-
+DistributionlineFlowDayCalc:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header-targetEl'
+  #理论线损手工计算Xpath
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[2]/td/div'
+  #切换到配电网6-20kv理论线损所在frame并点击
+  DistributionlineFlowDayCalc_Frame: 'iframe_13000110'
+  DistributionlineFlowDayCalc_id: 'tab-1162-btnInnerEl'
+  #勾选单位、变电站、配线
+  DistributionlineFlowDayCalcCompany_Xpath: "//div/div/div[3]/div/div[2]/div/table/tbody/tr[2]/td/div/img"
+  DistributionlineFlowDayCalcSubstation_Xpath: "//div/div/div[3]/div/div[2]/div/table/tbody/tr[3]/td/div/img[2]"
+  DistributionlineFlowDayCalcDistributionline_Xpath: "//div/div/div[3]/div/div[2]/div/table/tbody/tr[4]/td/div/input"
+  #点击潮流精确算法
+  Algorithm_ID: 'district620calcMethodTM-inputEl'
+  #计算id
+  Calculate_ID: 'district620_calc_start_button-btnInnerEl'
+  #计算成功后弹出框信息ID以及确定按钮ID
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  AlertConfirm_ID: 'button-1006-btnInnerEl'

@@ -1,0 +1,14 @@
+#! -*- encoding:utf-8 -*-
+TranotherlossdayCalcResult:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd-textEl'
+  #输电网计算结果查询
+  TranotherlossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表
+  TranotherlossdayReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #其它损耗表
+  TranotherlossdayCalcResult_Xpath: '//div[3]/div[3]/div/table/tbody/tr[12]/td/div'
+  #切换到frame
+  TranotherlossdayCalcResult_frame: 'iframe_4028801b3e3fabd9013e3fbb26d100e2'
+  #导出按钮
+  Daochu_id: 'button-1050-btnIconEl'

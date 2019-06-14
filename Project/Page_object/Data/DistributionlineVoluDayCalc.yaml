@@ -1,0 +1,21 @@
+DistributionlineVoluDayCalc:
+  #树结构中理论线损的ID
+  DistributionlineLossTree_id: "Lltmenu-panel_header_hd"
+  #树结构中理论线损手工计算的xpath定位路径
+  DistributionlineLossManualCal_xpath: "//div[@id ='Lltmenu-panel-body']/div/table/tbody/tr[2]/td/div"
+  #理论线损手工计算frame信息
+  TheoreticalLineloss620kV_Frame_id: 'iframe_13000110'
+  #配电网6-20kV理论线损计算tab路径信息
+  TheoreticalLineloss620kVTab_css: '#tab-1162-btnWrap'
+  #选择计算线路定位信息
+  TheroeticalLineloss620kVAeraLine_xpath: "//div[@id = 'district620_grid_tree-body']/div/table/tbody/tr[2]/td/div/input"
+  #计算方法选择为容量法定位信息
+  TheroeticalLineLossCalMethod_xpath: "//tr[@id = 'district620calcMethodGroup-inputRow']/td[2]/table/tbody/tr/td/table[2]/tbody/tr/td[2]/input"
+  #选择计算类型为日计算，输入日期为2014-8-1
+  CalcDataType_css: "#district620dayCalcData-inputEl"
+  CalcDataInput_css: "#dataTime620-inputEl"
+  #计算按钮定位新
+  Calculate_css: '#district620_calc_start_button'
+  #计算成功后弹出框信息ID以及取消按钮ID
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  AlertCancel_ID: 'button-1007-btnInnerEl'

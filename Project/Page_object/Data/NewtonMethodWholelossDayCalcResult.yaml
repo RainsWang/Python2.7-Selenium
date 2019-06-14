@@ -1,0 +1,31 @@
+NewtonMethodWholelossDayCalcResult:
+  #理论线损ID
+  LineLoss_ID: 'Lltmenu-panel_header_hd'
+  #输电网计算结果查询xpath
+  WholelossCalcResultQuery_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日报表xpath
+  DayCalcResult_Xpath: '//div/div/div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #输电网线损表xpath
+  WholelossCalcResult_Xpath: '//div/div/div/div[3]/div[3]/div/table/tbody/tr[7]/td/div'
+  #报表iframe的ID
+  WholelossCalcResultIframe_ID: 'iframe_4028801b3ec1fef3013ec63a7aa51abf'
+  #屏蔽一下代码原因：日期选择框的Iframe的ID和name都是随机的，无法进行定位，使用代表日进行查询和导出
+#  #激活开始时间窗口
+#  StartTimeWindow: 'ext-gen1068'
+#  #开始时间窗口ID
+#  StartTimeWindow_ID: 'ext-gen1068'
+#  #开始时间日期xpath
+#  StartTimeDate_xpath: '//div/div[2]/div/div/table/tbody/tr/td[6]/a/em/span'
+#  #开始时间确定按钮xpath
+#  StartTimeButton_xpath: '//div/div[2]/div/div/div[2]/div/em/button/span'
+#
+#  #结束时间窗口xpath
+#  EndTimeWindow_xpath: '//div[2]/div/div/table[2]/tbody/tr/td[2]/table/tbody/tr/td[3]/div'
+#  #结束时间日期xpath
+#  EndTimeDate_xpath: '//div[9]/div/table/tbody/tr/td[6]/a/em/span'
+#  #结束时间确定按钮xpath
+#  EndTimeButton_xpath: '//div/div[2]/div/div/div[2]/div[3]/em/button/span'
+  #查询按钮ID
+  Query_ID: '4028801b3eabc09f013eabfb1d050192-btnInnerEl'
+  #导出按钮ID
+  Export_ID: '4028801b3eabc09f013eabfb1d020187-b-btnInnerEl'

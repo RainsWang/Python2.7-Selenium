@@ -1,0 +1,21 @@
+﻿DistrictEleQuamonEnterdata:
+  Login:
+    #登录名
+    username: 'wm县'
+    #密码
+    password: '000000'
+  DistrictDataEntry:
+    #正向有功
+    ActivePower: '100'
+    #功率因数
+    PowerFactor: '0.2'
+    #负荷系数K
+    LoadShapeFactor: '1'
+    #用户1
+    DistributionTransformData1: '40'
+    #用户2
+    DistributionTransformData2: '10'
+    #用户3
+    DistributionTransformData3: '30'
+    #用户4
+    DistributionTransformData4: '20'

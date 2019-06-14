@@ -1,0 +1,17 @@
+﻿DistrictEleQuamonMetercalResult:
+  #理论线损
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd'
+  #配电网计算结果查询
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #月报表
+  DistributionLineMonthlyReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #台区线路线损表
+  LinelossmeterofDistrict_Xpath: '//div[3]/div[3]/div/table/tbody/tr[8]/td/div'
+  #结果frame_NAME
+  TheoreticalmeterResult_frame: 'iframe_4028801b3ef3c580013ef4715d2a22b3'
+  #电表损耗
+  Transformermeter_Xpath: '//div[2]/div[2]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[10]/div/a/div'
+  #切换到frame
+  DistrictCalcResult_frame: 'iframe_4028801b3eac6717013eac8b8c240121'
+  #导出
+  export_id: 'button-1051-btnIconEl'

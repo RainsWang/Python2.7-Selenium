@@ -1,0 +1,15 @@
+#! -*- encoding:utf-8 -*-
+WholelossNiuhourcal:
+  #理论线损ID
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header-targetEl'
+  #理论线损手工计算Xpath
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[2]/td/div/img[2]'
+  #切换到配电网6-20kv理论线损所在frame并点击
+  WholelossNiuhourcal_Frame: 'iframe_13000110'
+  #勾选单位
+  WholelossNiuhourcalCompany_Xpath: "//div[@id='companyId-body']/div/table/tbody/tr[2]/td/div/input"
+  #计算id
+  Calculate_ID: 'calc_start_button-btnInnerEl'
+  #计算成功后弹出框信息ID以及取消按钮ID
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  AlertConfirm_ID: 'button-1007-btnInnerEl'

@@ -1,0 +1,13 @@
+DistributionlineVoluDayCalcResult:
+  #树结构中理论线损的ID
+  DistributionlineLossTree_id: "Lltmenu-panel_header_hd"
+  #树结构中配电网计算结果查询的xpath
+  TheoreticalLineLossCalResult_Xpath: "//*[@id = 'Lltmenu-panel-body']/div/table/tbody/tr[5]/td/div/img[1]"
+  #树结构中日报表的xpath
+  DistributionLineDaylyReport_Xpath: "//*[@id = 'Lltmenu-panel-body']/div/table/tbody/tr[7]/td/div/img[2]"
+  #日配电线路线损表
+  LinelossmeterDistributionline_Xpath: "//*[@id = 'Lltmenu-panel-body']/div/table/tbody/tr[8]/td/div"
+  #切换到frame
+  DistributionLineCalcResult_frame: 'iframe_297efe173af22531013af33990d80000'
+  #导出按钮
+  Export_id: "button-1083-btnIconEl"

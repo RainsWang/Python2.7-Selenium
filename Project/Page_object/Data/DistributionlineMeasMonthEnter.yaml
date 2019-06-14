@@ -1,0 +1,55 @@
+DistributionlineMeasMonthEnter:
+  #数据中心id
+  DataCenter_id: 'Dacmenu-panel_header_hd-textEl'
+  #运营数据管理路径
+  RunDataManage_Xpath: '//*[@id="Dacmenu-panel-body"]/div/table/tbody/tr[3]/td/div/img'
+  #配线线路运行数据录入
+  LineDataEntry_Xpath: '//div[@id="Dacmenu-panel-body"]/div/table/tbody/tr[5]/td/div/img[2]'
+  #配线理论线损运行数据录入
+  TheoreticalLineLoss_Xpath: '//div[@id="Dacmenu-panel-body"]/div/table/tbody/tr[7]/td/div/img[4]'
+  #配线理论线损运行数据录入页面frame
+  TheoreticalLineLoss_Frame: 'iframe_120001140402'
+
+  #查询条件之量测分组选择，先点击下拉框，再选择月量测类型分组
+  MeasurementPacketDropdownbox_ID: 'customGroupBox-inputEl'
+  TheoreticalMounthChoose_Xpath: '//div[10]/div/ul/li'#月理论运行数据量测类型分组
+
+  #录入配线运行数据信息
+  #正向有功电量
+  ActivePowerActivation_Xpath: '//div[2]/div[2]/div/table/tbody/tr[2]/td[3]/div'  #激活输入框
+  ActivePower_name: 'PQ_P_A'#正向有功电量
+
+  #功率因素录入
+  PowerFactorActivation_Xpath: '//div[2]/div[2]/div/table/tbody/tr[2]/td[59]/div'#激活输入框
+  PowerFactor_name: 'F' #功率因素录入
+
+  #负荷形状系数录入
+  LoadShapeFactorActivation_Xpath: '//div[2]/div[2]/div/table/tbody/tr[2]/td[72]/div'#激活输入框
+  LoadShapeFactor_name: 'K'
+
+  #输入配变数据
+  #切换到配变tab页面
+  DistributionTransform_ID: 'tab-1162-btnEl'
+  #第一个配变数据激活
+  #配变路径变化值
+  DistributionTransformActivationBefor: '//div[2]/div[2]/div/table/tbody/tr['
+  DistributionTransformActivationAfter: ']/td[3]/div'
+  #配变数据录入
+  DistributionTransformData_name: 'PQ_P_A'
+
+
+
+  #输入数据后进行保存,以及弹出框内容校验
+  SaveButton_ID: 'save_meas_button-btnInnerEl'#保存按钮
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'#弹出框信息
+  AlertButton_ID: 'button-1005-btnEl'#确定按钮
+
+
+
+
+
+
+
+
+
+

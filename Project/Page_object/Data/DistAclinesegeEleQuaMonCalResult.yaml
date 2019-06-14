@@ -1,0 +1,21 @@
+#! -*- encoding:utf-8 -*-
+DistAclinesegeEleQuaMonCalResult:
+  #点击理论线损计算
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd'
+  #点击配电线路计算结果查询
+  TheoreticalLineLossManualcalResult_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  ##点击月报表
+  TheoreticalLineloss620kVMonth_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #点击配电线路线损表
+  WiringReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[7]/td/div/img[4]'
+  ##切换到结果frame
+  TheoreticalLinelossResult_frame: 'iframe_297efe173ab9e771013aba8af15d000a'
+  ##点击导线损耗链接
+  WireLosslj_Xpath: '//div[2]/div[2]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[9]/div'
+
+  ##切换到导线结果frame
+  WireCalculateResult_frame: 'iframe_297efe173ab9e7bb013aba7334df0008'
+  #导出按钮id
+  Daochu_ID: 'button-1055-btnEl'
+
+

@@ -1,0 +1,62 @@
+NewtonMethodDataEnter:
+  #数据中心id
+  DataCenter_ID: 'Dacmenu-panel_header_hd'
+  #运行数据管理绝对路径
+  RunDataManage_Xpath: '//div/div/div[2]/div[3]/div/table/tbody/tr[3]/td/div/img'
+  #输电网运行数据录入绝对路径
+  TransDataEnter_Xpath: '//div/div[2]/div[3]/div/table/tbody/tr[4]/td/div/img[2]'
+  #理论线损运行数据录入绝对路径
+  LineLossDataEnter_Xpath: '//div/div/div/div/div[2]/div[3]/div/table/tbody/tr[6]/td/div'
+  #页面收缩按钮id
+  splitter_ID: 'header-panel-splitter-collapseEl'
+  #报表查询页面iframe的id
+  LineLossDataEnterIframe_ID: 'iframe_120001140302'
+  #日期选择框下拉按钮绝对路径
+  DateDropdownBox_Xpath: '//div/div/div[2]/div/div/table[5]/tbody/tr/td[2]/table/tbody/tr/td[3]/div'
+  #日期选择框iframe的id
+  Date_ID: 'ext-gen1039'
+  #日期选择框日期1号绝对路径
+  Date1_Xpath: '//div/div/div/div/div[2]/div/div/table/tbody/tr/td[6]/a/em/span'
+  #日期选择确定按钮绝对路径
+  DateDetermineButton_Xpath: '//body/div/div/div/div/div/div[2]/div/div/div/div/em/button/span'
+
+  #负荷tab页绝对路径
+  LoadTab_Xpath: '//body/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/div[6]/em/button/span'
+
+  #有功功率
+  ActivePower: 'P'
+  #无功功率
+  ReactivePower: 'Q'
+  #电压
+  Volt: 'V'
+
+  #负荷有功功率运行数据录入绝对路径
+  LoadPBefor_Xpath: '//div[2]/div[2]/div/table/tbody/tr['
+  LoadPAfter_Xpath: ']/td[49]/div'
+  #负荷无功功率运行数据录入绝对路径
+  LoadQBefor_Xpath: '//div[2]/div[2]/div/table/tbody/tr['
+  LoadQAfter_Xpath: ']/td[53]/div'
+  #平衡节点电压运行数据录入绝对路径
+  BalanceNodeVoltBefor_Xpath: '//div[2]/div[2]/div/table/tbody/tr['
+  BalanceNodeVoltAfter_Xpath: ']/td[61]/div'
+
+  #运行数据保存按钮ID
+  DataSaveButton_ID: 'button-1015-btnInnerEl'
+  #运行数据保存成功信息提示ID
+  ConfirmMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  #运行数据保存成功确定按钮ID
+  ConfirmMsgButton_ID: 'button-1005'
+
+  #变电1负荷2页面绝对路径
+  Sub1Load2_Xpath: '//div/div/div[2]/div[2]/div/table/tbody/tr[3]/td[5]/div'
+  #变电2负荷1页面绝对路径
+  Sub2Load1_Xpath: '//div/div/div[2]/div[2]/div/table/tbody/tr[4]/td[5]/div'
+  #变电2负荷2页面绝对路径
+  Sub2Load2_Xpath: '//div/div/div[2]/div[2]/div/table/tbody/tr[5]/td[5]/div'
+
+
+  #PQ发电机tab页绝对路径
+  PQTab_Xpath: '//body/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/div[8]/em/button/span'
+  #平衡节点tab页绝对路径
+  BalanceNodeTab_Xpath: '//body/div[2]/div/div/div/div/div[2]/div/div/div/div[2]/div/div[10]/em/button/span'
+

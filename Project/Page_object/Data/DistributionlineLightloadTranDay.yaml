@@ -1,0 +1,39 @@
+#! -*- encoding:utf-8 -*-
+DistributionlineLightloadTranDay:
+  #线损分析ID
+  LineLossAnalysis_ID: 'Llamenu-panel_header_hd-textEl'
+  #配电网计算结果分析
+  TheoreticalLineLosscalresultAnalysis_Xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[4]/td/div/img'
+  #日分析
+  DistributionLineDayAnalysis_Xpath: '//div/div/div[6]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #配电线路综合分析
+  DistributionlinedaycalcAnalysis_Xpath: "//div/div/div[6]/div[3]/div/table/tbody/tr[7]/td/div/img[4]"
+  #切换到配电线路综合分析的frame中
+  DistributionlinedaycalcAnalysis_frame: "iframe_4028801b3ec7233c013ec9eeabbe09a9"
+  #点击查询条件中日期的下拉框
+  DateDropBox_CSS: "#DATE-bodyEl>table>tbody>tr>td>input"
+  DateDropBox_CSS1: "#DATE-bodyEl>table>tbody>tr>td>input"
+  #切换到日期选择框中的frame
+  Date_frame: "#ext-gen1041>iframe"
+  #点击日期下拉框年的下拉框
+  DateYearDropBox_ID: "ext-gen1092"
+  #选择日期下拉框年中的2015
+  YearSelect2015_Xpath: "//body/div[4]/div/ul/li[2]"
+  #点击日期下拉框代表日的下拉框
+  DateRepresentativeDay_ID: "ext-gen1095"
+  #选择日期下拉框代表日中的2015-08-01
+  DateRepresentativeDay20150801_Xpath: "//body/div[7]/div/ul/li"
+  #点击日期下拉框中的确定按钮
+  DateDropBoxSure_ID: "button-1023-btnInnerEl"
+  #点击页面中的查询按钮
+  Query_Class: "x-btn-inner"
+  #点击变压器台数追溯
+  DisttransformerNum_Xpath: "//table/tbody/tr[2]/td[31]/div/a/div/span"
+  #切换到配变运行综合分析（日）frame中
+  DisttransformerNum_frame: "iframe_4028801b3ee3d56b013ee5114e8c022d"
+  #点击轻载变台数
+  LightloadTranNum_Xpath: "//table/tbody/tr[2]/td[13]/div/a/div"
+  #切换到配变损耗组成分析-轻载变frame中
+  LightloadTranNum_frame: "iframe_04a4fb27d88d4817ab0234c93b7eaa8e"
+  #点击左下角的导出按钮
+  Export_ID: "button-1047-btnIconEl"

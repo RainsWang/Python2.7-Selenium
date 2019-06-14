@@ -1,0 +1,19 @@
+﻿#! -*- encoding:utf-8 -*-
+DistrictmonAnalyzeResult:
+  #理论线损
+  TheoreticalLineLoss_ID: 'Lltmenu-panel_header_hd'
+  #配电网计算结果查询
+  TheoreticalLineLossManualcal_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img'
+  #月报表
+  DistributionLineMonthlyReport_Xpath: '//div[3]/div[3]/div/table/tbody/tr[6]/td/div/img[2]'
+  #台区线路线损表
+  LinelosswireofDistrict_Xpath: '//div[3]/div[3]/div/table/tbody/tr[8]/td/div'
+
+  #结果frame_NAME
+  TheoreticalwireResult_frame: 'iframe_4028801b3ef3c580013ef4715d2a22b3'
+  #导线损耗
+  Transformerwire_Xpath: '//div[2]/div[2]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[9]/div/a/div'
+  #切换到frame
+  DistrictCalcResult_frame: 'iframe_4028801b3ea5f3cd013ea63d89bf03f8'
+  #导出
+  export_id: 'button-1055-btnIconEl'

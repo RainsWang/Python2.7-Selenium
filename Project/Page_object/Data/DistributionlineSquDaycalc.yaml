@@ -1,0 +1,46 @@
+#! -*- encoding:utf-8 -*-
+DistributionlineSquDaycalc:
+  #点击理论线损
+  TheoreticalLineLoss_Xpath: '//div[3]/div/div/div/div/div[2]/img'
+  #点击计算任务设置
+  CalTaskSet_Xpath: '//div[3]/div[3]/div/table/tbody/tr[3]/td/div/img'
+  #点击任务执行情况查询
+  TaskExecutionQuery_Xpath: '//div[3]/div[3]/div/table/tbody/tr[5]/td/div/img[3]'
+  #切换到任务设置frame
+  TaskExecutionQuery_Frame: 'iframe_13000104'
+  #点击所有任务前面的加号
+  TaskAction_Xpath: '//div/div[3]/div/table/tbody/tr[2]/td/div/div'
+  #选中配线日均方根电流法任务
+  DistributionlineRtMeQuaCutMethodTask_Xpath: '//div/div[3]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td[2]/div'
+  #点击明细数据
+  DetailDate_ID: 'button-1026-btnInnerEl'
+  #切换到日均方根电流法任务执行情况明细frame
+  DistributionlineRtMeQuaCutMethodTaskDetail_Frame: 'iframe_5685F266AA6D40BEAADCB10D5AFA67AF'
+  #点击日期选择框
+  DataSelectBox_Xpath: '//div[2]/div/div/div/table/tbody[2]/tr/td[2]/table/tbody/tr/td[2]/div'
+  #选择2014-8-1日
+  #输入日期为2014-01-01
+  Datatimeinput_id: 'datatime-inputEl'
+  #点击日期选择框
+  DataSelect_ID: 'splitbutton-1056-btnWrap'
+  #选择2014年
+  YearSelect_Xpath: '//div[7]/div[2]/div/div[2]/div[2]/a'
+  #选择8月
+  MonthSelect_Xpath: '//div[7]/div[2]/div/div/div[4]/a'
+  #点击确定
+  Determine_ID: 'button-1059-btnInnerEl'
+  #选择1号
+  NumberOne_Xpath: '//div[7]/div/table/tbody/tr/td[6]/a/em/span'
+  #点击查询
+  Query_ID: 'button-1046-btnInnerEl'
+  #选择任务
+  TaskSelect_Xpath: '//div[2]/div/div/div[3]/div/table/tbody/tr[2]/td/div/div'
+  #点击补算
+  Supplement_ID: 'button-1047-btnInnerEl'
+  #切换到补算窗口frame
+  #切换弹出框中补算
+  SupplementButton_ID: 'retry_button_id-btnEl'
+  #计算完成之后验证
+  AlertConfirm_ID: 'ext-gen1056'
+
+

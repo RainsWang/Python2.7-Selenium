@@ -1,0 +1,63 @@
+WholelossMeasHourEnter:
+  #数据中心id
+  DataCenter_id: 'Dacmenu-panel_header_hd-textEl'
+  #运营数据管理路径
+  RunDataManage_Xpath: '//*[@id="Dacmenu-panel-body"]/div/table/tbody/tr[3]/td/div/img'
+  #输电网运行数据录入
+  TransmissiongridDataEntry_Xpath: '//div[@id="Dacmenu-panel-body"]/div/table/tbody/tr[4]/td/div/img[2]'
+  #输电网理论线损运行数据录入
+  TransmissiongridLossDataEntry_Xpath: '//div[@id="Dacmenu-panel-body"]/div/table/tbody/tr[6]/td/div/img[4]'
+  #输电网理论线损运行数据录入页面frame
+  TransmissiongridLossDataEntry_Frame: 'iframe_120001140302'
+
+
+
+  #点击量测类型分组
+  CustomGroupBox_ID: 'customGroupBox-inputEl'
+  #切换日量测类型分组
+  DataCustomGroup_Xpath: '//div[9]/div/ul/li'
+  #选择日期下拉框
+  DataDropDownBox_ID: 'ext-gen1815'
+  #切换到日期选择框frame
+  DateSelectionBox_Frame: 'ext-gen1039'
+  #选择2014-8-1日
+  DateSelect_Xpath:  '//div/div/div/div/div/div[2]/div/div/table/tbody/tr/td[6]/a'
+  #点击日期框中的确定按钮
+  DateAlerButton_ID: 'button-1023-btnInnerEl'
+
+  #录入负荷运行数据信息
+  #负荷tab页面
+  EnergyConsumer_ID: 'tab-1315-btnEl'
+  #正向有功功率
+  EnergyConsumerBefor: '//div[2]/div[2]/div/table/tbody/tr['
+  EnergyConsumerAfter: ']/td[49]/div'
+  #无功功率
+  EnergyConsumerQBefor: '//div[2]/div[2]/div/table/tbody/tr['
+  EnergyConsumerQAfter: ']/td[53]/div'
+  #负荷有功功率
+  ActivePowerEnter: 'P'
+  #负荷无功功率
+  ReactivePowerEnter: 'Q'
+
+
+  #录入平衡节点电压
+  GeneratingUnit_ID: 'tab-1319-btnEl'
+  #电压
+  GeneratingUnitBefor: '//div[2]/div[2]/div/table/tbody/tr['
+  GeneratingUnitAfter: ']/td[61]/div'
+  VoltageEnter: 'V'
+
+
+  #录入电容投运容量
+  ReactorBank_id: 'tab-1321-btnEl'
+  #电容
+  ReactorBankBefor: '//div[2]/div[2]/div/table/tbody/tr['
+  ReactorBankAfter: ']/td[74]/div'
+  #投运容量
+  TransportationCapacityEnter: 'KVA'
+
+
+  #输入数据后进行保存,以及弹出框内容校验
+  SaveButton_ID: 'button-1015-btnInnerEl'
+  AlertMsg_ID: 'messagebox-1001-displayfield-inputEl'
+  AlertButton_ID: 'button-1005-btnInnerEl'

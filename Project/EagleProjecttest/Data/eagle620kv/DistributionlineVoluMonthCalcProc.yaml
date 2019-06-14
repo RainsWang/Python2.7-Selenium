@@ -1,0 +1,21 @@
+DistributionlineVoluMethodCalcProc:
+  Login:
+    #用户名
+    username: 'Autotest'
+    #密码
+    password: '000000'
+  DistributionlineDataEntry:
+    #正向有功电量
+    ActivePower: '6666'
+    #三相电路平均功率
+    PowerFactor: '0.23'
+    #负荷形状系数10
+    LoadShapeFactor: '1.23'
+    #配变数据1
+    DistributionTransformData1: '221'
+    #配变数据2
+    DistributionTransformData2: '222'
+    #配变数据3
+    DistributionTransformData3: '223'
+    #配变数据4
+    DistributionTransformData4: '225'

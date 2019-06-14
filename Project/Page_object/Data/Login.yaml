@@ -1,0 +1,10 @@
+#! -*- encoding:utf-8 -*-
+Login:
+    #请求地址
+    url: "http://192.168.0.11:3030/eagle2/coc/application/controller/frame/LoginUI.action"
+    #username_id
+    username_id: "username"
+    #password_id
+    password_id: "password"
+    #loginbutton_classname
+    loginbutton_class_name: "loginbutton"
