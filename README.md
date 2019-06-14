@@ -1,5 +1,5 @@
 # Python2.7-Selenium
-公司web自动化项目，基于python2.7和selenium，该版本能正常运行，包含76个报表的核对以及约20个流程；项目目录说明如下：
+公司web自动化项目，基于python2.7和selenium，该版本能正常运行，包含76个报表的核对以及约20个流程；项目目录说明如下：\r\n
 1、EagleProjecttest目前为上层项目控制目录，包含case、control、data、error、log、report
   case目录为测试用例py文件放置目录
   report目录下report.py为为报告生成目录，结合了unittest模块和htmltestrunner
